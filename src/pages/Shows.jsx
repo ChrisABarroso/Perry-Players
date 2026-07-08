@@ -2,7 +2,7 @@ import PhotoGrid from '../components/PhotoGrid.jsx'
 import { mainstagePhotos, showPosterPortrait } from '../photos.js'
 import './Shows.css'
 
-const TICKETS_URL = 'https://perryplayers.onthestage.tickets'
+const TICKETS_URL = 'https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0'
 
 export default function Shows() {
   return (

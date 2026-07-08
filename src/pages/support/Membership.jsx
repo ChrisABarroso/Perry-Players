@@ -45,7 +45,7 @@ export default function Membership() {
               <a
                 className="btn btn-outline"
                 style={{ marginTop: 20 }}
-                href="https://perryplayers.onthestage.tickets"
+                href="https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0"
                 target="_blank"
                 rel="noreferrer"
               >
