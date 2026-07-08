@@ -5,7 +5,7 @@ import { mainstagePhotos, showPosterWide } from '../photos.js'
 import { reviews } from '../reviews.js'
 import './Home.css'
 
-const TICKETS_URL = 'https://perryplayers.onthestage.tickets'
+const TICKETS_URL = 'https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0'
 
 export default function Home() {
   return (

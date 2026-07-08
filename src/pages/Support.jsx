@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Support() {
   return (
     <>
@@ -28,13 +30,13 @@ export default function Support() {
                 costumes, licensing, and the upkeep of our historic theatre.
                 Every dollar stays right here in Perry.
               </p>
-              <a
+              <Link
                 className="btn btn-primary"
                 style={{ marginTop: 20 }}
-                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Donation%20Inquiry"
+                to="/support/donate"
               >
                 Make a Gift
-              </a>
+              </Link>
             </div>
             <div className="card">
               <div className="card-icon">⭐</div>
@@ -44,13 +46,13 @@ export default function Support() {
                 theatregoers each season. Sponsorship packages include program
                 ads, lobby recognition, and complimentary tickets.
               </p>
-              <a
+              <Link
                 className="btn btn-primary"
                 style={{ marginTop: 20 }}
-                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Sponsorship%20Inquiry"
+                to="/support/sponsorship"
               >
                 Become a Sponsor
-              </a>
+              </Link>
             </div>
             <div className="card">
               <div className="card-icon">🎟️</div>
@@ -60,13 +62,13 @@ export default function Support() {
                 to your community theatre — including voting rights, insider
                 updates, and the satisfaction of sustaining local arts.
               </p>
-              <a
+              <Link
                 className="btn btn-primary"
                 style={{ marginTop: 20 }}
-                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Membership%20Inquiry"
+                to="/support/membership"
               >
                 Join Today
-              </a>
+              </Link>
             </div>
             <div className="card">
               <div className="card-icon">🤍</div>
@@ -76,13 +78,13 @@ export default function Support() {
                 who sustain the theatre year after year. Friends are celebrated
                 in every show program.
               </p>
-              <a
+              <Link
                 className="btn btn-primary"
                 style={{ marginTop: 20 }}
-                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Friends%20Program%20Inquiry"
+                to="/support/friends"
               >
                 Become a Friend
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -127,12 +129,12 @@ export default function Support() {
             </div>
           </div>
           <div className="center" style={{ marginTop: 44 }}>
-            <a
+            <Link
               className="btn btn-primary"
-              href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Volunteer%20Inquiry"
+              to="/support/volunteer"
             >
               Sign Up to Volunteer
-            </a>
+            </Link>
           </div>
         </div>
       </section>
