@@ -1,0 +1,355 @@
+:root {
+  --bg: #201a30;
+  --bg-soft: #282040;
+  --bg-tint: #362413;
+  --surface: #2e2648;
+  --ink: #f7f3ea;
+  --ink-soft: #c6bfd8;
+  --accent: #ab24a8;
+  --accent-bright: #b52aa0;
+  --accent-deep: #912690;
+  --gold: #ed9b15;
+  --gold-bright: #f5b647;
+  --gold-soft: rgba(237, 155, 21, 0.13);
+  --line: rgba(244, 239, 228, 0.15);
+  --radius: 16px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 44px rgba(0, 0, 0, 0.5);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--gold-bright);
+  text-decoration: none;
+}
+
+/* ---------- Layout helpers ---------- */
+
+.container {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.section-soft {
+  background: var(--bg-soft);
+}
+
+.section-tint {
+  background: var(--bg-tint);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  margin-bottom: 16px;
+}
+
+.section-lead {
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  max-width: 640px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .section-lead {
+  margin-inline: auto;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    padding: 60px 0;
+  }
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(171, 36, 168, 0.4);
+}
+
+.btn-primary:hover {
+  background: var(--accent-bright);
+}
+
+.btn-outline {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: #241a08;
+}
+
+.btn-light {
+  background: #2b1c3c;
+  color: var(--gold-bright);
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(237, 155, 21, 0.4);
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--ink-soft);
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--gold-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+/* ---------- Page hero (interior pages) ---------- */
+
+.page-hero {
+  background:
+    radial-gradient(ellipse 70% 80% at 80% 0%, rgba(181, 42, 160, 0.24), transparent),
+    radial-gradient(ellipse 60% 70% at 10% 100%, rgba(237, 155, 21, 0.22), transparent),
+    linear-gradient(160deg, #2b1c3c 0%, #201a30 100%);
+  padding: 96px 0 72px;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin-bottom: 14px;
+}
+
+.page-hero p {
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+  max-width: 620px;
+}
+
+/* ---------- FAQ accordion ---------- */
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 18px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  padding: 0 22px 18px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Forms ---------- */
+
+.form-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.form-grid label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--bg-soft);
+  color: var(--ink);
+  transition: border-color 0.15s ease;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus,
+.form-grid select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Misc ---------- */
+
+.badge {
+  display: inline-block;
+  background: var(--gold-soft);
+  color: var(--gold-bright);
+  border: 1px solid rgba(237, 155, 21, 0.35);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  border: none;
+  margin: 48px 0;
+}
+
+.map-frame {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  filter: saturate(0.85);
+}

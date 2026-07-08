@@ -1,0 +1,141 @@
+export default function Support() {
+  return (
+    <>
+      <section className="page-hero">
+        <div className="container">
+          <span className="eyebrow">Support Us</span>
+          <h1>Keep the Curtain Rising</h1>
+          <p>
+            Perry Players is a nonprofit community theatre. Your support — in
+            dollars, time, or talent — makes every production possible.
+          </p>
+        </div>
+      </section>
+
+      {/* Ways to give */}
+      <section className="section">
+        <div className="container">
+          <div className="center" style={{ marginBottom: 48 }}>
+            <span className="eyebrow">Ways to Give</span>
+            <h2 className="section-title">Every contribution counts</h2>
+          </div>
+          <div className="grid-2">
+            <div className="card">
+              <div className="card-icon">💝</div>
+              <h3>Donate</h3>
+              <p>
+                Your tax-deductible gift directly funds set construction,
+                costumes, licensing, and the upkeep of our historic theatre.
+                Every dollar stays right here in Perry.
+              </p>
+              <a
+                className="btn btn-primary"
+                style={{ marginTop: 20 }}
+                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Donation%20Inquiry"
+              >
+                Make a Gift
+              </a>
+            </div>
+            <div className="card">
+              <div className="card-icon">⭐</div>
+              <h3>Sponsorship</h3>
+              <p>
+                Put your business in front of hundreds of engaged local
+                theatregoers each season. Sponsorship packages include program
+                ads, lobby recognition, and complimentary tickets.
+              </p>
+              <a
+                className="btn btn-primary"
+                style={{ marginTop: 20 }}
+                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Sponsorship%20Inquiry"
+              >
+                Become a Sponsor
+              </a>
+            </div>
+            <div className="card">
+              <div className="card-icon">🎟️</div>
+              <h3>Membership</h3>
+              <p>
+                Become a member of Perry Players and enjoy a deeper connection
+                to your community theatre — including voting rights, insider
+                updates, and the satisfaction of sustaining local arts.
+              </p>
+              <a
+                className="btn btn-primary"
+                style={{ marginTop: 20 }}
+                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Membership%20Inquiry"
+              >
+                Join Today
+              </a>
+            </div>
+            <div className="card">
+              <div className="card-icon">🤍</div>
+              <h3>Friends of Perry Players</h3>
+              <p>
+                Our Friends program recognizes generous individuals and families
+                who sustain the theatre year after year. Friends are celebrated
+                in every show program.
+              </p>
+              <a
+                className="btn btn-primary"
+                style={{ marginTop: 20 }}
+                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Friends%20Program%20Inquiry"
+              >
+                Become a Friend
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Volunteer */}
+      <section className="section section-tint">
+        <div className="container">
+          <div className="center" style={{ marginBottom: 48 }}>
+            <span className="eyebrow">Volunteer</span>
+            <h2 className="section-title">There's a place for you here</h2>
+            <p className="section-lead">
+              No experience necessary — just enthusiasm! Volunteers are the
+              heart of everything we do.
+            </p>
+          </div>
+          <div className="grid-3">
+            <div className="card">
+              <div className="card-icon">🎭</div>
+              <h3>Onstage</h3>
+              <p>
+                Auditions are open to everyone in the community. Watch our
+                announcements for upcoming audition dates — your stage debut
+                awaits.
+              </p>
+            </div>
+            <div className="card">
+              <div className="card-icon">🔨</div>
+              <h3>Backstage</h3>
+              <p>
+                Set building, painting, costumes, props, lighting, and sound —
+                the magic behind the curtain needs many hands.
+              </p>
+            </div>
+            <div className="card">
+              <div className="card-icon">👋</div>
+              <h3>Front of House</h3>
+              <p>
+                Ushering, box office, and concessions volunteers make every
+                audience member feel welcome — and see the show for free!
+              </p>
+            </div>
+          </div>
+          <div className="center" style={{ marginTop: 44 }}>
+            <a
+              className="btn btn-primary"
+              href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Volunteer%20Inquiry"
+            >
+              Sign Up to Volunteer
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
