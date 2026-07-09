@@ -90,8 +90,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 0.85rem;
+}
+
+.footer-social a svg {
+  width: 18px;
+  height: 18px;
 }
 
 .footer-social a:hover {

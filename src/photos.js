@@ -21,6 +21,8 @@ function showTitle(path) {
   if (/parade/i.test(path)) return 'Parade'
   if (/peter pan/i.test(path)) return 'Peter Pan'
   if (/shrek/i.test(path)) return 'Shrek – The Musical'
+  if (/anastasia/i.test(path)) return 'Anastasia - The Musical'
+  if (/addams family/i.test(path)) return 'Addams Family'
   return 'Perry Players MainStage'
 }
 
