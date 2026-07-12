@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { emailLink } from '../../email.js'
 
 export default function Membership() {
   return (
@@ -29,7 +30,9 @@ export default function Membership() {
               <a
                 className="btn btn-primary"
                 style={{ marginTop: 20 }}
-                href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Membership%20Inquiry"
+                href={emailLink('Membership Inquiry')}
+                target="_blank"
+                rel="noreferrer"
               >
                 Ask About Membership
               </a>

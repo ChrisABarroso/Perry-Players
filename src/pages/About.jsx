@@ -1,3 +1,5 @@
+import { BOX_OFFICE_EMAIL, emailLink } from '../email.js'
+
 export default function About() {
   return (
     <>
@@ -65,7 +67,9 @@ export default function About() {
           <a
             className="btn btn-outline"
             style={{ marginTop: 28 }}
-            href="mailto:perryplayerstheatreboxoffice@gmail.com"
+            href={emailLink('Board Inquiry')}
+            target="_blank"
+            rel="noreferrer"
           >
             Contact the Board
           </a>
@@ -108,8 +112,8 @@ export default function About() {
             </p>
             <p style={{ color: 'var(--ink-soft)', marginBottom: 12 }}>
               <strong style={{ color: 'var(--ink)' }}>Email:</strong>{' '}
-              <a href="mailto:perryplayerstheatreboxoffice@gmail.com">
-                perryplayerstheatreboxoffice@gmail.com
+              <a href={emailLink()} target="_blank" rel="noreferrer">
+                {BOX_OFFICE_EMAIL}
               </a>
             </p>
             <p style={{ color: 'var(--ink-soft)' }}>

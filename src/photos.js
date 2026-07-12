@@ -13,6 +13,10 @@ const posterGlob = import.meta.glob('./Photos/Current Show Poster/*', {
   eager: true,
   import: 'default',
 })
+const seasonGlob = import.meta.glob('./Photos/Season Posters/*', {
+  eager: true,
+  import: 'default',
+})
 
 function showTitle(path) {
   if (/little shop/i.test(path)) return 'Little Shop of Horrors'
@@ -36,6 +40,25 @@ export const mainstagePhotos = Object.entries(mainstageGlob).map(([path, src]) =
   caption: showTitle(path),
   alt: `Scene from ${showTitle(path)} at Perry Players`,
 }))
+
+// The season lineup, in performance order. Each entry finds its poster in
+// the Season Posters folder by filename.
+const seasonOrder = [
+  { title: 'Wicked', match: /wicked/i },
+  { title: 'Hamilton', match: /hamilton/i },
+  { title: 'Matilda Jr.', match: /matilda/i, kids: true },
+  { title: 'Ragtime', match: /ragtime/i },
+  { title: '13', match: /\/13\./i, kids: true },
+  { title: 'West Side Story', match: /west side/i },
+  { title: 'Hairspray', match: /hairspray/i },
+]
+
+export const seasonShows = seasonOrder
+  .map((show) => {
+    const entry = Object.entries(seasonGlob).find(([path]) => show.match.test(path))
+    return entry ? { title: show.title, kids: show.kids, src: entry[1] } : null
+  })
+  .filter(Boolean)
 
 // Portrait art for tall poster slots; wide art for banner slots.
 // Falls back to whatever is in the folder if only one image exists.

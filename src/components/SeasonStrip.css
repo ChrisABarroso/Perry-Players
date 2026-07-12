@@ -1,0 +1,125 @@
+.season-strip {
+  overflow: hidden;
+  padding: 12px 0 8px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.season-track {
+  display: flex;
+  width: max-content;
+  animation: season-scroll 40s linear infinite;
+}
+
+.season-strip:hover .season-track {
+  animation-play-state: paused;
+}
+
+@keyframes season-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.season-group {
+  display: flex;
+  gap: 26px;
+  padding-right: 26px;
+}
+
+.season-card {
+  position: relative;
+  display: block;
+  width: 230px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.season-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(237, 155, 21, 0.5);
+  box-shadow: var(--shadow-lg);
+}
+
+.season-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.season-caption {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.season-more {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-bright);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.season-card:hover .season-more {
+  opacity: 1;
+}
+
+.season-card strong {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.season-num {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(22, 15, 32, 0.82);
+  border: 1px solid var(--gold);
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.season-kids {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  background: var(--gold-soft);
+  border: 1px solid rgba(237, 155, 21, 0.35);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .season-track {
+    animation: none;
+  }
+  .season-strip {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}

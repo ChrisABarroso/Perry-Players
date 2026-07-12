@@ -1,5 +1,6 @@
 import PhotoGrid from '../components/PhotoGrid.jsx'
 import { campPhotos } from '../photos.js'
+import { emailLink } from '../email.js'
 
 const glossary = [
   ['Blocking', 'The planned movement and positioning of actors on stage.'],
@@ -46,7 +47,9 @@ export default function Youth() {
             </p>
             <a
               className="btn btn-primary"
-              href="mailto:perryplayerstheatreboxoffice@gmail.com?subject=Youth%20Summer%20Camp"
+              href={emailLink('Youth Summer Camp')}
+              target="_blank"
+              rel="noreferrer"
             >
               Ask About Camp
             </a>

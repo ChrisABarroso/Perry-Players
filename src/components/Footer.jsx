@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo.jsx'
+import { emailLink } from '../email.js'
 import './Footer.css'
 
 export default function Footer() {
@@ -62,7 +63,7 @@ export default function Footer() {
           <ul className="footer-contact">
             <li>909 Main Street<br />Perry, GA 31069</li>
             <li><a href="tel:+14789875354">(478) 987-5354</a></li>
-            <li><a href="mailto:perryplayerstheatreboxoffice@gmail.com">Email the box office</a></li>
+            <li><a href={emailLink()} target="_blank" rel="noreferrer">Email the box office</a></li>
           </ul>
         </div>
       </div>

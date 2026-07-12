@@ -1,5 +1,8 @@
 import PhotoGrid from '../components/PhotoGrid.jsx'
+import SeasonStrip from '../components/SeasonStrip.jsx'
 import { mainstagePhotos, showPosterPortrait } from '../photos.js'
+import { season } from '../season.js'
+import { emailLink } from '../email.js'
 import './Shows.css'
 
 const TICKETS_URL = 'https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0'
@@ -50,16 +53,18 @@ export default function Shows() {
         </div>
       </section>
 
-      {/* Coming soon */}
+      {/* Season lineup */}
       <section className="section section-soft">
-        <div className="container center">
-          <span className="eyebrow">Coming Soon</span>
-          <h2 className="section-title">The rest of our season</h2>
+        <div className="container center" style={{ marginBottom: 48 }}>
+          <span className="eyebrow">Announcing Our Season</span>
+          <h2 className="section-title">Seven shows. One incredible season.</h2>
           <p className="section-lead">
-            Our upcoming season lineup will be announced soon. Follow us on
-            social media or check back here for announcements!
+            From Broadway blockbusters to our children's productions, here's
+            what's coming to the Perry Players stage — in order of appearance.
+            Click any show for dates, auditions, and details.
           </p>
         </div>
+        <SeasonStrip shows={season} />
       </section>
 
       {/* Past productions */}
@@ -89,7 +94,13 @@ export default function Shows() {
             production proposals from our community. Contact the board to learn
             about the proposal process and deadlines.
           </p>
-          <a className="btn btn-outline" style={{ marginTop: 28 }} href="mailto:perryplayerstheatreboxoffice@gmail.com">
+          <a
+            className="btn btn-outline"
+            style={{ marginTop: 28 }}
+            href={emailLink('Production Proposal')}
+            target="_blank"
+            rel="noreferrer"
+          >
             Contact the Board
           </a>
         </div>

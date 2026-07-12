@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BOX_OFFICE_EMAIL, emailLink } from '../email.js'
 
 export default function Contact() {
   const [sent, setSent] = useState(false)
@@ -6,9 +7,9 @@ export default function Contact() {
   function handleSubmit(e) {
     e.preventDefault()
     const data = new FormData(e.target)
-    const subject = encodeURIComponent(`Website inquiry from ${data.get('name')}`)
-    const body = encodeURIComponent(`${data.get('message')}\n\n— ${data.get('name')} (${data.get('email')})`)
-    window.location.href = `mailto:perryplayerstheatreboxoffice@gmail.com?subject=${subject}&body=${body}`
+    const subject = `Website inquiry from ${data.get('name')}`
+    const body = `${data.get('message')}\n\n— ${data.get('name')} (${data.get('email')})`
+    window.open(emailLink(subject, body), '_blank', 'noopener')
     setSent(true)
   }
 
@@ -48,8 +49,8 @@ export default function Contact() {
             <div className="card">
               <h3>✉️ Email</h3>
               <p>
-                <a href="mailto:perryplayerstheatreboxoffice@gmail.com">
-                  perryplayerstheatreboxoffice@gmail.com
+                <a href={emailLink()} target="_blank" rel="noreferrer">
+                  {BOX_OFFICE_EMAIL}
                 </a>
               </p>
             </div>
@@ -60,8 +61,8 @@ export default function Contact() {
             <h3 style={{ marginBottom: 24 }}>Send us a message</h3>
             {sent && (
               <p style={{ background: 'var(--gold-soft)', padding: '12px 16px', borderRadius: 10, marginBottom: 20 }}>
-                Your email app should have opened — if not, email us directly at
-                perryplayerstheatreboxoffice@gmail.com.
+                A Gmail window should have opened with your message ready to
+                send — if not, email us directly at {BOX_OFFICE_EMAIL}.
               </p>
             )}
             <form className="form-grid" onSubmit={handleSubmit}>

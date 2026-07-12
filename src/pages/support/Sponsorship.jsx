@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { BOX_OFFICE_EMAIL, emailLink } from '../../email.js'
 
 const tiers = [
   { amount: '$100 – $249', benefits: 'Special listing in the show playbill' },
@@ -65,8 +66,8 @@ export default function Sponsorship() {
           <p className="fine-print">
             Sponsors receiving playbill recognition should email a business
             card, name recognition, graphic, or company logo (.png or .jpg) to{' '}
-            <a href="mailto:perryplayerstheatreboxoffice@gmail.com">
-              perryplayerstheatreboxoffice@gmail.com
+            <a href={emailLink('Sponsorship Playbill Artwork')} target="_blank" rel="noreferrer">
+              {BOX_OFFICE_EMAIL}
             </a>
             . We reserve the right to adjust sizes and shapes to fit available
             space.

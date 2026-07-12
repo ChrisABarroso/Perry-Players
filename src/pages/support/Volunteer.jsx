@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { emailLink } from '../../email.js'
 
 const roles = [
   {
@@ -119,9 +120,7 @@ export default function Volunteer() {
       '',
       form.message,
     ].join('\n')
-    window.location.href = `mailto:perryplayerstheatreboxoffice@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`
+    window.open(emailLink(subject, body), '_blank', 'noopener')
   }
 
   return (
@@ -165,7 +164,7 @@ export default function Volunteer() {
             <h2 className="section-title">Join the crew</h2>
             <p className="section-lead">
               Tell us a little about yourself and we'll be in touch. Submitting
-              opens an email to our box office with your answers filled in.
+              opens a Gmail message to our box office with your answers filled in.
             </p>
           </div>
           <form className="form-grid" onSubmit={handleSubmit}>

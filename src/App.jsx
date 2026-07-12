@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import VisitUs from './pages/VisitUs.jsx'
 import About from './pages/About.jsx'
 import Shows from './pages/Shows.jsx'
+import ShowDetail from './pages/ShowDetail.jsx'
 import Support from './pages/Support.jsx'
 import Donate from './pages/support/Donate.jsx'
 import Sponsorship from './pages/support/Sponsorship.jsx'
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/visit" element={<VisitUs />} />
           <Route path="/about" element={<About />} />
           <Route path="/shows" element={<Shows />} />
+          <Route path="/shows/:slug" element={<ShowDetail />} />
           <Route path="/support" element={<Support />} />
           <Route path="/support/donate" element={<Donate />} />
           <Route path="/support/sponsorship" element={<Sponsorship />} />
