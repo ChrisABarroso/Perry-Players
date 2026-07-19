@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import Logo from './Logo.jsx'
 import { season } from '../season.js'
+import logo from '../Photos/PP_logo_light.png'
 import './Navbar.css'
 
 const links = [
@@ -21,11 +21,11 @@ export default function Navbar() {
     <header className="nav-wrap">
       <div className="container nav-inner">
         <Link to="/" className="nav-logo" onClick={() => setOpen(false)}>
-          <Logo className="nav-logo-mark" />
-          <span className="nav-logo-text">
-            Perry Players
-            <small>Community Theatre</small>
-          </span>
+          <img
+            className="nav-logo-img"
+            src={logo}
+            alt="Perry Players Community Theatre"
+          />
         </Link>
 
         <nav className={`nav-links ${open ? 'is-open' : ''}`}>

@@ -40,35 +40,12 @@
 }
 
 .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #fff;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
-  line-height: 1.1;
   margin-bottom: 18px;
 }
 
-.footer-logo span:last-child {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-logo small {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #a09dbd;
-}
-
-.footer-logo-mark {
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
+.footer-logo img {
+  height: 104px;
+  width: auto;
 }
 
 .footer-tagline {

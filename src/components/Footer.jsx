@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import Logo from './Logo.jsx'
 import { emailLink } from '../email.js'
+import logo from '../Photos/PP_logo_light.png'
 import './Footer.css'
 
 export default function Footer() {
@@ -9,11 +9,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div>
           <div className="footer-logo">
-            <Logo className="footer-logo-mark" />
-            <span>
-              Perry Players
-              <small>Community Theatre</small>
-            </span>
+            <img src={logo} alt="Perry Players Community Theatre" />
           </div>
           <p className="footer-tagline">
             Middle Georgia's premier community theatre, bringing live performance
