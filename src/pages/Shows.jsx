@@ -1,8 +1,7 @@
 import PhotoGrid from '../components/PhotoGrid.jsx'
 import SeasonStrip from '../components/SeasonStrip.jsx'
 import { mainstagePhotos, showPosterPortrait } from '../photos.js'
-import { season } from '../season.js'
-import { emailLink } from '../email.js'
+import { season, SEASON_PASS_URL } from '../season.js'
 import './Shows.css'
 
 const TICKETS_URL = 'https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0'
@@ -57,12 +56,21 @@ export default function Shows() {
       <section className="section section-soft">
         <div className="container center" style={{ marginBottom: 48 }}>
           <span className="eyebrow">Announcing Our Season</span>
-          <h2 className="section-title">Seven shows. One incredible season.</h2>
+          <h2 className="section-title">Six shows. One incredible season.</h2>
           <p className="section-lead">
             From Broadway blockbusters to our children's productions, here's
             what's coming to the Perry Players stage — in order of appearance.
             Click any show for dates, auditions, and details.
           </p>
+          <a
+            className="btn btn-gold"
+            style={{ marginTop: 28 }}
+            href={SEASON_PASS_URL || '#'}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Buy Season Pass
+          </a>
         </div>
         <SeasonStrip shows={season} />
       </section>
@@ -84,27 +92,6 @@ export default function Shows() {
         </div>
       </section>
 
-      {/* Proposals */}
-      <section className="section section-tint">
-        <div className="container center">
-          <span className="eyebrow">For Directors</span>
-          <h2 className="section-title">Propose a Production</h2>
-          <p className="section-lead">
-            Interested in directing a show at Perry Players? We welcome
-            production proposals from our community. Contact the board to learn
-            about the proposal process and deadlines.
-          </p>
-          <a
-            className="btn btn-outline"
-            style={{ marginTop: 28 }}
-            href={emailLink('Production Proposal')}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contact the Board
-          </a>
-        </div>
-      </section>
     </>
   )
 }

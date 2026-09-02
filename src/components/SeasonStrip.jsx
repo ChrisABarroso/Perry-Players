@@ -12,7 +12,14 @@ export default function SeasonStrip({ shows }) {
           tabIndex={hidden ? -1 : 0}
         >
           <span className="season-num">{i + 1}</span>
-          <img src={show.src} alt={`${show.title} poster`} loading="lazy" />
+          {show.src ? (
+            <img src={show.src} alt={`${show.title} poster`} loading="lazy" />
+          ) : (
+            <span className="season-placeholder">
+              <span className="season-placeholder-title">{show.title}</span>
+              <span className="season-placeholder-note">Poster coming soon</span>
+            </span>
+          )}
           <span className="season-caption">
             <strong>{show.title}</strong>
             {show.kids && <span className="season-kids">Children's Show</span>}

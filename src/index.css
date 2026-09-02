@@ -180,6 +180,16 @@ a {
   color: var(--gold-bright);
 }
 
+.btn-gold {
+  background: var(--gold);
+  color: #241a08;
+  box-shadow: 0 6px 20px rgba(237, 155, 21, 0.35);
+}
+
+.btn-gold:hover {
+  background: var(--gold-bright);
+}
+
 /* ---------- Cards ---------- */
 
 .card {

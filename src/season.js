@@ -1,68 +1,62 @@
 import { seasonShows } from './photos.js'
 
-// Season details for the 2026–27 season. Dates are per-show; performances
-// run Fri & Sat 7:30 PM and Sun 2:30 PM, tickets on sale ~2 weeks before opening.
+// Paste the season pass purchase link here when it's ready.
+export const SEASON_PASS_URL = ''
+
+// Season details for the 2026–27 season. Performances run Fri & Sat 7:30 PM
+// and Sun 2:30 PM; tickets go on sale ~2 weeks before each opening night.
 const details = {
-  Wicked: {
-    slug: 'wicked',
-    tagline: 'The untold story of the witches of Oz',
+  'Finding Nemo': {
+    slug: 'finding-nemo',
+    tagline: 'An unforgettable journey across the ocean',
     synopsis:
-      "Long before Dorothy drops in, two girls meet at Shiz University: Elphaba — born with emerald-green skin, smart, fiery, and misunderstood — and Glinda, beautiful, ambitious, and wildly popular. Their unlikely friendship is tested as the world pulls them in opposite directions: one becomes Glinda the Good, the other the Wicked Witch of the West. With Stephen Schwartz's soaring score, including 'Defying Gravity' and 'Popular,' Wicked looks at everything you thought you knew about Oz from a whole new angle.",
-    auditions: 'July 6 – 7, 2026',
-    performances: 'September 11 – 20, 2026',
-    ticketsOnSale: 'August 28, 2026',
+      "Just keep swimming! Based on the beloved Pixar film, Finding Nemo follows Marlin, an overprotective clownfish, as he crosses the entire ocean to find his son Nemo — who's been scooped up and dropped into a dentist's office fish tank. With the help of Dory, a cheerfully forgetful blue tang, Marlin discovers that the ocean is full of danger, wonder, and friends in the most unexpected places. Performed by our talented young actors, this is an adventure the whole family will love.",
+    auditions: 'July 27 – 28, 2026',
+    performances: 'September 4 – 13, 2026',
+    ticketsOnSale: 'August 21, 2026',
   },
-  Hamilton: {
-    slug: 'hamilton',
-    tagline: 'The story of America then, told by America now',
+  'Into the Woods': {
+    slug: 'into-the-woods',
+    tagline: 'Be careful what you wish for',
     synopsis:
-      "Lin-Manuel Miranda's revolutionary musical tells the story of Alexander Hamilton — a penniless immigrant orphan who rises to become George Washington's right-hand man and the nation's first Treasury Secretary. Blending hip-hop, jazz, R&B, and Broadway, Hamilton follows his meteoric rise, his passionate marriage to Eliza Schuyler, and his fateful rivalry with Aaron Burr. It's the story of founding a nation — ambition, legacy, love, and loss — like you've never heard it before.",
-    auditions: 'September 14 – 15, 2026',
-    performances: 'November 6 – 15, 2026',
-    ticketsOnSale: 'October 23, 2026',
+      "Stephen Sondheim and James Lapine's masterpiece weaves together the fairy tales you grew up with — Cinderella, Jack and the Beanstalk, Little Red Riding Hood, Rapunzel — around a baker and his wife who long for a child. To lift a witch's curse, they venture into the woods, where every wish comes true… and every wish has a price. Act One gives you the happily-ever-after; Act Two asks what happens next. Witty, haunting, and gorgeous, it's one of the greatest musicals ever written.",
+    auditions: 'August 29 – 30, 2026',
+    performances: 'October 16 – 25, 2026',
+    ticketsOnSale: 'October 2, 2026',
   },
-  'Matilda Jr.': {
-    slug: 'matilda-jr',
-    tagline: 'A little girl with big dreams — and even bigger powers',
+  'The Sound of Music': {
+    slug: 'sound-of-music',
+    tagline: 'The hills are alive',
     synopsis:
-      "Based on Roald Dahl's beloved book, Matilda Jr. is the story of Matilda Wormwood, an extraordinary little girl with a vivid imagination and a sharp mind — stuck with parents who don't appreciate her and a terrifying headmistress, Miss Trunchbull, who despises children. With the help of her kind teacher Miss Honey and a few remarkable powers of her own, Matilda dares to take a stand and change her own story. Performed by our talented young actors, with Tim Minchin's witty, inventive songs.",
-    auditions: 'October 19 – 20, 2026',
-    performances: 'December 11 – 13, 2026',
+      "Rodgers and Hammerstein's final and most beloved collaboration. When the free-spirited Maria leaves the abbey to become governess to Captain von Trapp's seven children, she brings music back into a household that had forgotten how to sing. As romance blooms and the shadow of the Third Reich falls over Austria, the von Trapps must find the courage to hold onto what matters most. With 'My Favorite Things,' 'Do-Re-Mi,' 'Edelweiss,' and 'Climb Ev'ry Mountain,' it's a timeless story for every generation.",
+    auditions: 'October 18 – 19, 2026',
+    performances: 'December 11 – 20, 2026',
     ticketsOnSale: 'November 27, 2026',
+  },
+  'Little Women': {
+    slug: 'little-women',
+    tagline: 'Four sisters. One extraordinary story.',
+    synopsis:
+      "Based on Louisa May Alcott's cherished novel, Little Women follows the four March sisters — traditional Meg, wild and aspiring writer Jo, timid Beth, and romantic Amy — as they grow up in Civil War-era Massachusetts. Guided by their beloved Marmee while their father is away at war, the sisters discover love, loss, ambition, and the unbreakable bond of family. With a soaring score by Jason Howland and Mindi Dickstein, it's an intimate, heartfelt musical about finding your own astonishing voice.",
+    auditions: 'December 13 – 14, 2026',
+    performances: 'February 26 – March 7, 2027',
+    ticketsOnSale: 'February 12, 2027',
   },
   Ragtime: {
     slug: 'ragtime',
     tagline: 'Three families. One American dream.',
     synopsis:
       "Based on E.L. Doctorow's sweeping novel, Ragtime weaves together the stories of three families at the dawn of the twentieth century: a well-to-do family in New Rochelle, a bold Harlem ragtime pianist named Coalhouse Walker Jr., and a Jewish immigrant father and daughter chasing a better life. Their paths cross with historical figures like Harry Houdini, Evelyn Nesbit, and Booker T. Washington as America itself changes around them. Stephen Flaherty and Lynn Ahrens' stunning score makes this one of the most powerful musicals ever written.",
-    auditions: 'December 7 – 8, 2026',
-    performances: 'February 12 – 21, 2027',
-    ticketsOnSale: 'January 29, 2027',
+    auditions: 'March 21 – 22, 2027',
+    performances: 'May 14 – 23, 2027',
+    ticketsOnSale: 'April 30, 2027',
   },
-  13: {
-    slug: '13',
-    tagline: 'Growing up is hard — especially in a brand new town',
+  'Sister Act': {
+    slug: 'sister-act',
+    tagline: 'A divine musical comedy',
     synopsis:
-      "From Tony Award-winner Jason Robert Brown, 13 follows Evan Goldman, a New York City kid whose life is turned upside down when his parents' divorce lands him in small-town Indiana — right before his thirteenth birthday. Determined to make his bar mitzvah the coolest party in town, Evan has to navigate new friendships, first crushes, cliques, and every hilarious, awkward moment of being almost-thirteen. Performed entirely by a cast of young performers, 13 is fresh, funny, and full of heart.",
-    auditions: 'January 25 – 26, 2027',
-    performances: 'March 19 – 21, 2027',
-    ticketsOnSale: 'March 5, 2027',
-  },
-  'West Side Story': {
-    slug: 'west-side-story',
-    tagline: 'Two gangs. Two lovers. One unforgettable story.',
-    synopsis:
-      "Shakespeare's Romeo and Juliet collides with the streets of 1950s New York in one of the greatest musicals of all time. The Jets and the Sharks battle for their corner of the Upper West Side — until Tony, a Jet, falls hopelessly in love with Maria, the sister of the Sharks' leader. Leonard Bernstein's electrifying score and Stephen Sondheim's lyrics gave the world 'Maria,' 'Tonight,' 'America,' and 'Somewhere' — and a love story that still breaks hearts seventy years on.",
-    auditions: 'March 1 – 2, 2027',
-    performances: 'April 30 – May 9, 2027',
-    ticketsOnSale: 'April 16, 2027',
-  },
-  Hairspray: {
-    slug: 'hairspray',
-    tagline: 'Big hair. Big heart. Big dreams.',
-    synopsis:
-      "It's 1962 in Baltimore, and lovable big-haired teen Tracy Turnblad has one dream: to dance on the Corny Collins Show. When she wins a spot on the show, Tracy becomes an overnight sensation — and uses her newfound fame to fight for what's right, campaigning to integrate the show so everyone can dance together. Bursting with Marc Shaiman and Scott Wittman's irresistible songs like 'Good Morning Baltimore' and 'You Can't Stop the Beat,' Hairspray is a big, bright, joyful party of a musical.",
-    auditions: 'May 17 – 18, 2027',
+      "When disco diva Deloris Van Cartier witnesses a crime, the police hide her in the last place anyone would look — a convent! Disguised as a nun under the watchful eye of a disapproving Mother Superior, Deloris can't help herself: she transforms the convent's tone-deaf choir into a soulful, show-stopping sensation. With an original score by Tony and Oscar winner Alan Menken, Sister Act is a feel-good celebration of friendship, sisterhood, and finding your voice — heavenly fun from start to finish.",
+    auditions: 'May 16 – 17, 2027',
     performances: 'July 16 – 25, 2027',
     ticketsOnSale: 'July 2, 2027',
   },

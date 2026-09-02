@@ -17,6 +17,38 @@
   box-shadow: var(--shadow-lg);
 }
 
+.show-detail-placeholder {
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(181, 42, 160, 0.25), transparent),
+    linear-gradient(160deg, #322246 0%, #201a30 100%);
+}
+
+.show-detail-placeholder span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--gold-bright);
+}
+
+.show-detail-placeholder small {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
 .show-detail-synopsis {
   color: var(--ink-soft);
   font-size: 1.08rem;

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Slideshow from '../components/Slideshow.jsx'
 import ReviewSlideshow from '../components/ReviewSlideshow.jsx'
 import { mainstagePhotos, showPosterWide } from '../photos.js'
+import { SEASON_PASS_URL } from '../season.js'
 import { reviews } from '../reviews.js'
 import './Home.css'
 
@@ -27,6 +28,9 @@ export default function Home() {
             <div className="hero-actions">
               <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
                 Get Tickets
+              </a>
+              <a className="btn btn-gold" href={SEASON_PASS_URL || '#'} target="_blank" rel="noreferrer">
+                Buy Season Pass
               </a>
               <Link className="btn btn-outline" to="/shows">
                 See What's On

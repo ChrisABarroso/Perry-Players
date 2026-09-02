@@ -42,23 +42,21 @@ export const mainstagePhotos = Object.entries(mainstageGlob).map(([path, src]) =
 }))
 
 // The season lineup, in performance order. Each entry finds its poster in
-// the Season Posters folder by filename.
+// the Season Posters folder by filename; shows without a poster yet get a
+// styled placeholder until the file is added.
 const seasonOrder = [
-  { title: 'Wicked', match: /wicked/i },
-  { title: 'Hamilton', match: /hamilton/i },
-  { title: 'Matilda Jr.', match: /matilda/i, kids: true },
+  { title: 'Finding Nemo', match: /nemo/i, kids: true },
+  { title: 'Into the Woods', match: /into the woods/i },
+  { title: 'The Sound of Music', match: /sound of music/i },
+  { title: 'Little Women', match: /little women/i },
   { title: 'Ragtime', match: /ragtime/i },
-  { title: '13', match: /\/13\./i, kids: true },
-  { title: 'West Side Story', match: /west side/i },
-  { title: 'Hairspray', match: /hairspray/i },
+  { title: 'Sister Act', match: /sister act/i },
 ]
 
-export const seasonShows = seasonOrder
-  .map((show) => {
-    const entry = Object.entries(seasonGlob).find(([path]) => show.match.test(path))
-    return entry ? { title: show.title, kids: show.kids, src: entry[1] } : null
-  })
-  .filter(Boolean)
+export const seasonShows = seasonOrder.map((show) => {
+  const entry = Object.entries(seasonGlob).find(([path]) => show.match.test(path))
+  return { title: show.title, kids: show.kids, src: entry ? entry[1] : null }
+})
 
 // Portrait art for tall poster slots; wide art for banner slots.
 // Falls back to whatever is in the folder if only one image exists.

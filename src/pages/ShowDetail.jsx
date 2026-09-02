@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { season, getShow } from '../season.js'
+import { season, getShow, SEASON_PASS_URL } from '../season.js'
 import { emailLink } from '../email.js'
 import './ShowDetail.css'
 
@@ -29,7 +29,14 @@ export default function ShowDetail() {
       <section className="section">
         <div className="container show-detail-grid">
           <div className="show-detail-poster">
-            <img src={show.src} alt={`${show.title} poster`} />
+            {show.src ? (
+              <img src={show.src} alt={`${show.title} poster`} />
+            ) : (
+              <div className="show-detail-placeholder">
+                <span>{show.title}</span>
+                <small>Poster coming soon</small>
+              </div>
+            )}
           </div>
 
           <div>
@@ -62,6 +69,9 @@ export default function ShowDetail() {
             <div className="show-detail-actions">
               <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
                 Buy Tickets
+              </a>
+              <a className="btn btn-gold" href={SEASON_PASS_URL || '#'} target="_blank" rel="noreferrer">
+                Buy Season Pass
               </a>
               <a
                 className="btn btn-outline"
