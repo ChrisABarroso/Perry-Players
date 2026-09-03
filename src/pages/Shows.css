@@ -78,3 +78,33 @@
 .past-grid {
   margin-top: 48px;
 }
+
+/* Season announcement teaser */
+
+.season-teaser {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 40px 52px;
+  border-radius: 24px;
+  border: 1px solid rgba(237, 155, 21, 0.35);
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 0%, rgba(181, 42, 160, 0.22), transparent),
+    linear-gradient(160deg, #322246 0%, #241c36 100%);
+  box-shadow: var(--shadow-lg);
+}
+
+.season-teaser-curtain {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+}
+
+.season-teaser .section-lead strong {
+  color: var(--gold-bright);
+}
+
+@media (max-width: 640px) {
+  .season-teaser {
+    padding: 40px 24px 36px;
+  }
+}

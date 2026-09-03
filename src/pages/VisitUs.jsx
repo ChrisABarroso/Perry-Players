@@ -143,9 +143,9 @@ export default function VisitUs() {
           <details className="faq-item">
             <summary>Are shows appropriate for children?</summary>
             <p>
-              It varies by production! Family-friendly shows like Shrek – The
-              Musical are great for all ages. Check each show's description or
-              contact the box office if you're unsure.
+              It varies by production! Many of our shows are great for all
+              ages. Check each show's description or contact the box office if
+              you're unsure.
             </p>
           </details>
           <details className="faq-item">

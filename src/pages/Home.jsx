@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import Slideshow from '../components/Slideshow.jsx'
 import ReviewSlideshow from '../components/ReviewSlideshow.jsx'
 import { mainstagePhotos, showPosterWide } from '../photos.js'
-import { SEASON_PASS_URL } from '../season.js'
 import { reviews } from '../reviews.js'
 import './Home.css'
 
@@ -26,11 +25,9 @@ export default function Home() {
               community together.
             </p>
             <div className="hero-actions">
+              {/* Season pass button goes here once season passes go on sale. */}
               <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
                 Get Tickets
-              </a>
-              <a className="btn btn-gold" href={SEASON_PASS_URL || '#'} target="_blank" rel="noreferrer">
-                Buy Season Pass
               </a>
               <Link className="btn btn-outline" to="/shows">
                 See What's On
@@ -42,15 +39,16 @@ export default function Home() {
             <img
               className="hero-card-poster"
               src={showPosterWide}
-              alt="Shrek – The Musical at Perry Players"
+              alt="Into the Woods at Perry Players"
             />
             <span className="hero-card-label">Now Showing</span>
-            <h2>Shrek – The Musical</h2>
-            <p className="hero-card-dates">July 17 – 26, 2026</p>
+            <h2>Into the Woods</h2>
+            <p className="hero-card-dates">October 16 – 25, 2026</p>
             <p>
-              The beloved DreamWorks story leaps from screen to stage! Join
-              Shrek, Donkey, and Princess Fiona in this hilarious,
-              family-friendly musical adventure.
+              Stephen Sondheim's beloved musical weaves Cinderella, Jack and the
+              Beanstalk, Little Red Riding Hood, and Rapunzel into one
+              enchanting story — where every wish comes true, and every wish
+              has a price.
             </p>
             <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
               Buy Tickets
@@ -64,7 +62,7 @@ export default function Home() {
         <div className="container info-strip-inner">
           <div>
             <strong>Showtimes</strong>
-            <span>Fri &amp; Sat 7:30 PM · Sun 2:30 PM</span>
+            <span>Thu, Fri &amp; Sat 7:30 PM · Sun 2:30 PM</span>
           </div>
           <div>
             <strong>Location</strong>
@@ -165,7 +163,7 @@ export default function Home() {
       <section className="cta-banner">
         <div className="container center">
           <h2>Ready for your night at the theatre?</h2>
-          <p>Grab your seats for Shrek – The Musical before they're gone.</p>
+          <p>Grab your seats for Into the Woods before they're gone.</p>
           <a className="btn btn-light" href={TICKETS_URL} target="_blank" rel="noreferrer">
             Get Tickets Now
           </a>

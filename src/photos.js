@@ -58,11 +58,12 @@ export const seasonShows = seasonOrder.map((show) => {
   return { title: show.title, kids: show.kids, src: entry ? entry[1] : null }
 })
 
-// Portrait art for tall poster slots; wide art for banner slots.
-// Falls back to whatever is in the folder if only one image exists.
+// Current show art. Name the wide/banner file with "landscape", "wide", or
+// "banner" in it; whatever else is in the folder is treated as the portrait
+// poster. Falls back to the same image for both if only one file exists.
 const posterEntries = Object.entries(posterGlob)
-const portraitEntry = posterEntries.find(([path]) => /portrait/i.test(path))
 const wideEntry = posterEntries.find(([path]) => /landscape|wide|banner/i.test(path))
+const portraitEntry = posterEntries.find((entry) => entry !== wideEntry)
 
-export const showPosterPortrait = (portraitEntry || posterEntries[0])?.[1]
-export const showPosterWide = (wideEntry || posterEntries[0])?.[1]
+export const showPosterPortrait = (portraitEntry || wideEntry)?.[1]
+export const showPosterWide = (wideEntry || portraitEntry)?.[1]

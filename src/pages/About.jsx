@@ -117,8 +117,8 @@ export default function About() {
               </a>
             </p>
             <p style={{ color: 'var(--ink-soft)' }}>
-              <strong style={{ color: 'var(--ink)' }}>Showtimes:</strong> Fri &amp;
-              Sat 7:30 PM · Sun 2:30 PM
+              <strong style={{ color: 'var(--ink)' }}>Showtimes:</strong> Thu,
+              Fri &amp; Sat 7:30 PM · Sun 2:30 PM
             </p>
           </div>
           <div>
