@@ -1,4 +1,5 @@
 import { BOX_OFFICE_EMAIL, emailLink } from '../email.js'
+import Icon from '../components/Icon.jsx'
 
 export default function About() {
   return (
@@ -47,7 +48,7 @@ export default function About() {
               <p>Ages welcome, onstage &amp; off</p>
             </div>
             <div className="card center">
-              <h3 style={{ fontSize: '2.2rem', color: 'var(--accent)' }}>❤️</h3>
+              <h3 style={{ color: 'var(--gold)', display: 'flex', justifyContent: 'center' }}><Icon name="heart" size={38} /></h3>
               <p>Made with love in Perry, GA</p>
             </div>
           </div>

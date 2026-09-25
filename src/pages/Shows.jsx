@@ -1,8 +1,8 @@
 import PhotoGrid from '../components/PhotoGrid.jsx'
 import { mainstagePhotos, showPosterPortrait } from '../photos.js'
+import { TICKETS_URL } from '../tickets.js'
 import './Shows.css'
-
-const TICKETS_URL = 'https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0'
+import Icon from '../components/Icon.jsx'
 
 export default function Shows() {
   return (
@@ -55,24 +55,14 @@ export default function Shows() {
       <section className="section section-soft">
         <div className="container center">
           <div className="season-teaser">
-            <span className="season-teaser-curtain">🎭</span>
+            <span className="season-teaser-curtain"><Icon name="mask" size={40} /></span>
             <span className="eyebrow">Coming Soon</span>
             <h2 className="section-title">Our next season will be announced soon</h2>
             <p className="section-lead">
-              Be the first to hear it — we'll reveal the full lineup live on
-              <strong> opening night of Into the Woods, October 16</strong>.
-              Join us in the audience to find out what's coming to the Perry
-              Players stage.
+              We're putting the finishing touches on our upcoming lineup, and
+              we can't wait to share it. Follow us on Facebook and Instagram or
+              check back here to be the first to know.
             </p>
-            <a
-              className="btn btn-primary"
-              style={{ marginTop: 28 }}
-              href={TICKETS_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Get Opening Night Tickets
-            </a>
           </div>
         </div>
       </section>

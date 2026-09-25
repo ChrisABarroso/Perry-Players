@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { BOX_OFFICE_EMAIL, emailLink } from '../../email.js'
 import packetUrl from '../../Files/Perry_Players_Sponsorship_Packet_Final.docx?url'
 import './Sponsorship.css'
+import Icon from '../../components/Icon.jsx'
 
 // Levels and benefits mirror the Perry Players Sponsorship Packet.
 const showSponsorships = {
@@ -124,7 +125,7 @@ export default function Sponsorship() {
           </div>
           <div className="grid-3">
             <div className="card">
-              <div className="card-icon">🎭</div>
+              <div className="card-icon"><Icon name="mask" /></div>
               <h3>A true community effort</h3>
               <p>
                 Our actors, directors, production teams, and volunteers give
@@ -134,7 +135,7 @@ export default function Sponsorship() {
               </p>
             </div>
             <div className="card">
-              <div className="card-icon">🎟️</div>
+              <div className="card-icon"><Icon name="ticket" /></div>
               <h3>Tickets only cover part of it</h3>
               <p>
                 Performance rights, sets, costumes, props, technical equipment,
@@ -144,7 +145,7 @@ export default function Sponsorship() {
               </p>
             </div>
             <div className="card">
-              <div className="card-icon">🏛️</div>
+              <div className="card-icon"><Icon name="building" /></div>
               <h3>Investing in our theatre</h3>
               <p>
                 Future facility goals include replacing the seating in our
@@ -229,7 +230,7 @@ export default function Sponsorship() {
           </div>
           <div className="grid-2 sponsor-pay">
             <div className="card">
-              <div className="card-icon">✉️</div>
+              <div className="card-icon"><Icon name="envelope" /></div>
               <h3>By mail or in person</h3>
               <p>
                 We accept cash, check, and money orders. Make checks payable to
@@ -242,7 +243,7 @@ export default function Sponsorship() {
               </p>
             </div>
             <div className="card">
-              <div className="card-icon">📄</div>
+              <div className="card-icon"><Icon name="document" /></div>
               <h3>Sponsorship packet</h3>
               <p>
                 Download the full packet for sponsorship details and a printable

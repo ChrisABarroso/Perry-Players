@@ -1,80 +1,81 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { emailLink } from '../../email.js'
+import Icon from '../../components/Icon.jsx'
 
 const roles = [
   {
-    icon: '🥤',
+    icon: 'cup',
     name: 'Intermission Refreshments',
     desc: 'Provide and serve food and beverages during intermissions.',
   },
   {
-    icon: '🎨',
+    icon: 'palette',
     name: 'Set Design',
     desc: 'Collaborate with producers and directors on the artistic concept for each set.',
   },
   {
-    icon: '🔨',
+    icon: 'hammer',
     name: 'Set Construction',
     desc: 'Build and paint sets — tools and materials provided.',
   },
   {
-    icon: '🪑',
+    icon: 'chair',
     name: 'Props',
     desc: 'Source and manage the items performers use on stage.',
   },
   {
-    icon: '💡',
+    icon: 'bulb',
     name: 'Lighting Crew',
     desc: 'Hang lights and operate the computerized light board.',
   },
   {
-    icon: '🎵',
+    icon: 'note',
     name: 'Sound Design',
     desc: 'Create sound effects and music for productions.',
   },
   {
-    icon: '🎚️',
+    icon: 'sliders',
     name: 'Sound Crew',
     desc: 'Run sound equipment during performances from the tech booth.',
   },
   {
-    icon: '👗',
+    icon: 'dress',
     name: 'Costume Design',
     desc: 'Create period- and character-appropriate attire for the cast.',
   },
   {
-    icon: '🧵',
+    icon: 'spool',
     name: 'Costume Seamstress',
     desc: 'Construct and finish costumes for productions.',
   },
   {
-    icon: '💄',
+    icon: 'lipstick',
     name: 'Makeup',
     desc: 'Design makeup, wigs, and hair styling for actors.',
   },
   {
-    icon: '📋',
+    icon: 'clipboard',
     name: 'Stage Management',
     desc: 'Oversee all aspects of a production and call the cues.',
   },
   {
-    icon: '💃',
+    icon: 'dance',
     name: 'Choreographer',
     desc: 'Design and teach dance sequences for musicals.',
   },
   {
-    icon: '🖌️',
+    icon: 'pen',
     name: 'Graphic Design',
     desc: 'Create logos, posters, and playbill layouts.',
   },
   {
-    icon: '🎟️',
+    icon: 'ticket',
     name: 'Box Office Staff',
     desc: 'Manage the ticket booth during performances.',
   },
   {
-    icon: '💇',
+    icon: 'scissors',
     name: 'Hair & Wig Artists',
     desc: 'Collaborate on hairstyles and wig selection for the cast.',
   },
@@ -147,7 +148,7 @@ export default function Volunteer() {
           <div className="grid-3">
             {roles.map((r) => (
               <div className="card" key={r.name}>
-                <div className="card-icon">{r.icon}</div>
+                <div className="card-icon"><Icon name={r.icon} /></div>
                 <h3>{r.name}</h3>
                 <p>{r.desc}</p>
               </div>

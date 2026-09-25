@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Icon from '../components/Icon.jsx'
 
 export default function Support() {
   return (
@@ -23,7 +24,7 @@ export default function Support() {
           </div>
           <div className="grid-2">
             <div className="card">
-              <div className="card-icon">💝</div>
+              <div className="card-icon"><Icon name="heart" /></div>
               <h3>Donate</h3>
               <p>
                 Your tax-deductible gift directly funds set construction,
@@ -39,7 +40,7 @@ export default function Support() {
               </Link>
             </div>
             <div className="card">
-              <div className="card-icon">⭐</div>
+              <div className="card-icon"><Icon name="star" /></div>
               <h3>Sponsorship</h3>
               <p>
                 Put your business in front of hundreds of engaged local
@@ -55,7 +56,7 @@ export default function Support() {
               </Link>
             </div>
             <div className="card">
-              <div className="card-icon">🎟️</div>
+              <div className="card-icon"><Icon name="ticket" /></div>
               <h3>Membership</h3>
               <p>
                 Become a member of Perry Players and enjoy a deeper connection
@@ -71,7 +72,7 @@ export default function Support() {
               </Link>
             </div>
             <div className="card">
-              <div className="card-icon">🤍</div>
+              <div className="card-icon"><Icon name="friends" /></div>
               <h3>Friends of Perry Players</h3>
               <p>
                 Our Friends program recognizes generous individuals and families
@@ -103,7 +104,7 @@ export default function Support() {
           </div>
           <div className="grid-3">
             <div className="card">
-              <div className="card-icon">🎭</div>
+              <div className="card-icon"><Icon name="mask" /></div>
               <h3>Onstage</h3>
               <p>
                 Auditions are open to everyone in the community. Watch our
@@ -112,7 +113,7 @@ export default function Support() {
               </p>
             </div>
             <div className="card">
-              <div className="card-icon">🔨</div>
+              <div className="card-icon"><Icon name="hammer" /></div>
               <h3>Backstage</h3>
               <p>
                 Set building, painting, costumes, props, lighting, and sound —
@@ -120,7 +121,7 @@ export default function Support() {
               </p>
             </div>
             <div className="card">
-              <div className="card-icon">👋</div>
+              <div className="card-icon"><Icon name="door" /></div>
               <h3>Front of House</h3>
               <p>
                 Ushering, box office, and concessions volunteers make every

@@ -7,12 +7,13 @@
   --ink-soft: #c6bfd8;
   --accent: #ab24a8;
   --accent-bright: #b52aa0;
+  --accent-text: #f45ae0;
   --accent-deep: #912690;
   --gold: #ed9b15;
   --gold-bright: #f5b647;
   --gold-soft: rgba(237, 155, 21, 0.13);
   --line: rgba(244, 239, 228, 0.15);
-  --radius: 16px;
+  --radius: 6px;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 12px 44px rgba(0, 0, 0, 0.5);
   --font-display: 'Fraunces', Georgia, serif;
@@ -135,59 +136,77 @@ a {
 }
 
 /* ---------- Buttons ---------- */
+/* Not boxes: a lit-up word over a heavy rule, like a marquee credit. */
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 999px;
+  gap: 9px;
+  padding: 0 1px 7px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid currentColor;
+  border-radius: 0;
+  box-shadow: none;
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: 1.3;
+  color: var(--accent-text);
   cursor: pointer;
-  border: 2px solid transparent;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition: color 0.18s ease, border-bottom-width 0.18s ease,
+    padding-bottom 0.18s ease, text-shadow 0.18s ease;
+}
+
+/* Arrow marks it as an action without drawing a box around it */
+.btn::after {
+  content: '→';
+  font-size: 1.05em;
+  line-height: 1;
+  transition: transform 0.18s ease;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: none;
+  background: none;
+  border-bottom-width: 6px;
+  padding-bottom: 4px;
+}
+
+.btn:hover::after {
+  transform: translateX(5px);
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(171, 36, 168, 0.4);
+  color: var(--accent-text);
+  text-shadow: 0 0 22px rgba(244, 90, 224, 0.45);
 }
 
 .btn-primary:hover {
-  background: var(--accent-bright);
-}
-
-.btn-outline {
-  border-color: var(--gold);
-  color: var(--gold-bright);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--gold);
-  color: #241a08;
-}
-
-.btn-light {
-  background: #2b1c3c;
-  color: var(--gold-bright);
+  color: #ff7ce9;
+  text-shadow: 0 0 26px rgba(244, 90, 224, 0.7);
 }
 
 .btn-gold {
-  background: var(--gold);
-  color: #241a08;
-  box-shadow: 0 6px 20px rgba(237, 155, 21, 0.35);
+  color: var(--gold-bright);
+  text-shadow: 0 0 22px rgba(237, 155, 21, 0.4);
 }
 
 .btn-gold:hover {
-  background: var(--gold-bright);
+  color: #ffc866;
+}
+
+.btn-outline,
+.btn-outline:hover {
+  color: var(--ink);
+  border-bottom-color: var(--gold);
+}
+
+/* For use on the gold banner, where pink would disappear */
+.btn-light,
+.btn-light:hover {
+  color: #3d0b39;
+  text-shadow: none;
 }
 
 /* ---------- Cards ---------- */
@@ -217,15 +236,16 @@ a {
 }
 
 .card-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--gold-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
+  display: block;
+  width: 46px;
+  color: var(--gold);
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--gold);
+}
+
+.card-icon svg {
+  display: block;
 }
 
 /* ---------- Page hero (interior pages) ---------- */
@@ -345,7 +365,7 @@ a {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 2px;
 }
 
 .divider {

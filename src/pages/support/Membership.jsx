@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { emailLink } from '../../email.js'
+import { TICKETS_URL } from '../../tickets.js'
+import Icon from '../../components/Icon.jsx'
 
 export default function Membership() {
   return (
@@ -19,7 +21,7 @@ export default function Membership() {
         <div className="container">
           <div className="grid-2">
             <div className="card">
-              <div className="card-icon">🎟️</div>
+              <div className="card-icon"><Icon name="ticket" /></div>
               <h3>Join Perry Players!</h3>
               <p>
                 Our membership program is a great way to get involved with the
@@ -38,7 +40,7 @@ export default function Membership() {
               </a>
             </div>
             <div className="card">
-              <div className="card-icon">📅</div>
+              <div className="card-icon"><Icon name="calendar" /></div>
               <h3>Season Tickets</h3>
               <p>
                 We are not currently offering season tickets. Individual show
@@ -48,7 +50,7 @@ export default function Membership() {
               <a
                 className="btn btn-outline"
                 style={{ marginTop: 20 }}
-                href="https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0"
+                href={TICKETS_URL}
                 target="_blank"
                 rel="noreferrer"
               >

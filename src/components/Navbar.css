@@ -46,15 +46,8 @@
 }
 
 .nav-cta {
-  padding: 10px 22px;
-  font-size: 0.9rem;
-  background: var(--gold);
-  color: #241a08;
-  box-shadow: 0 6px 20px rgba(237, 155, 21, 0.35);
-}
-
-.nav-cta:hover {
-  background: var(--gold-bright);
+  font-size: 0.95rem;
+  margin-left: 4px;
 }
 
 /* Shows dropdown */

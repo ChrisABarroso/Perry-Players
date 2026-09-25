@@ -3,9 +3,9 @@ import Slideshow from '../components/Slideshow.jsx'
 import ReviewSlideshow from '../components/ReviewSlideshow.jsx'
 import { mainstagePhotos, showPosterWide } from '../photos.js'
 import { reviews } from '../reviews.js'
+import { TICKETS_URL } from '../tickets.js'
 import './Home.css'
-
-const TICKETS_URL = 'https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0'
+import Icon from '../components/Icon.jsx'
 
 export default function Home() {
   return (
@@ -100,17 +100,17 @@ export default function Home() {
           </p>
           <div className="grid-3" style={{ marginTop: 48, textAlign: 'left' }}>
             <Link to="/visit" className="card">
-              <div className="card-icon">📍</div>
+              <div className="card-icon"><Icon name="pin" /></div>
               <h3>Directions &amp; Parking</h3>
               <p>Find us in the heart of historic downtown Perry, with convenient free parking nearby.</p>
             </Link>
             <Link to="/visit" className="card">
-              <div className="card-icon">🍽️</div>
+              <div className="card-icon"><Icon name="dining" /></div>
               <h3>Dining Nearby</h3>
               <p>Make it dinner and a show — downtown Perry offers wonderful restaurants steps from our doors.</p>
             </Link>
             <Link to="/visit" className="card">
-              <div className="card-icon">❓</div>
+              <div className="card-icon"><Icon name="question" /></div>
               <h3>FAQs &amp; Seating</h3>
               <p>Seating charts, accessibility info, and answers to all your common questions.</p>
             </Link>
@@ -129,19 +129,19 @@ export default function Home() {
           </p>
           <div className="grid-3" style={{ marginTop: 48, textAlign: 'left' }}>
             <div className="card">
-              <div className="card-icon">💝</div>
+              <div className="card-icon"><Icon name="heart" /></div>
               <h3>Donate</h3>
               <p>Your gift directly supports productions, education, and the upkeep of our historic theatre.</p>
               <Link to="/support" className="card-link">Give today →</Link>
             </div>
             <div className="card">
-              <div className="card-icon">🤝</div>
+              <div className="card-icon"><Icon name="people" /></div>
               <h3>Volunteer</h3>
               <p>Onstage or behind the scenes — there's a place for everyone at Perry Players.</p>
               <Link to="/support" className="card-link">Get involved →</Link>
             </div>
             <div className="card">
-              <div className="card-icon">⭐</div>
+              <div className="card-icon"><Icon name="star" /></div>
               <h3>Sponsor</h3>
               <p>Put your business in the spotlight while investing in local arts and culture.</p>
               <Link to="/support" className="card-link">Learn more →</Link>

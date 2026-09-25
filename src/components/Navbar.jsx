@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import logo from '../Photos/PP_logo_light.png'
+import { TICKETS_URL } from '../tickets.js'
 import './Navbar.css'
 
 // The Shows tab gets a per-show dropdown again once a season is announced —
@@ -42,7 +43,7 @@ export default function Navbar() {
           ))}
           <a
             className="btn btn-primary nav-cta"
-            href="https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0"
+            href={TICKETS_URL}
             target="_blank"
             rel="noreferrer"
           >

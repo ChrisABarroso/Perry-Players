@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Icon from '../../components/Icon.jsx'
 
 export default function Donate() {
   return (
@@ -48,7 +49,7 @@ export default function Donate() {
           </div>
           <div className="grid-2">
             <div className="card">
-              <div className="card-icon">🛒</div>
+              <div className="card-icon"><Icon name="cart" /></div>
               <h3>Kroger Community Rewards</h3>
               <p>
                 Support Perry Players every time you shop! Link your Kroger
@@ -66,7 +67,7 @@ export default function Donate() {
               </a>
             </div>
             <div className="card">
-              <div className="card-icon">🎩</div>
+              <div className="card-icon"><Icon name="hat" /></div>
               <h3>Props &amp; Costume Donations</h3>
               <p>
                 Cleaning out the attic? We accept vintage clothing, props, and

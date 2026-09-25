@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { BOX_OFFICE_EMAIL, emailLink } from '../email.js'
+import './Contact.css'
+import Icon from '../components/Icon.jsx'
 
 export default function Contact() {
   const [sent, setSent] = useState(false)
@@ -27,27 +29,31 @@ export default function Contact() {
       </section>
 
       <section className="section">
-        <div className="container grid-2" style={{ alignItems: 'start' }}>
-          {/* Contact info */}
-          <div>
-            <span className="eyebrow">Get in Touch</span>
+        <div className="container contact-grid">
+          <div className="contact-head">
             <h2 className="section-title">Box Office &amp; General Inquiries</h2>
+          </div>
 
-            <div className="card" style={{ marginBottom: 20 }}>
-              <h3>📍 Visit</h3>
+          {/* Contact info */}
+          <div className="contact-info">
+            <div className="card contact-card">
+              <div className="card-icon"><Icon name="pin" /></div>
+              <h3>Visit</h3>
               <p>
                 909 Main Street<br />
                 Perry, GA 31069
               </p>
             </div>
-            <div className="card" style={{ marginBottom: 20 }}>
-              <h3>📞 Call</h3>
+            <div className="card contact-card">
+              <div className="card-icon"><Icon name="phone" /></div>
+              <h3>Call</h3>
               <p>
                 <a href="tel:+14789875354">(478) 987-5354</a>
               </p>
             </div>
-            <div className="card">
-              <h3>✉️ Email</h3>
+            <div className="card contact-card">
+              <div className="card-icon"><Icon name="envelope" /></div>
+              <h3>Email</h3>
               <p>
                 <a href={emailLink()} target="_blank" rel="noreferrer">
                   {BOX_OFFICE_EMAIL}
@@ -57,8 +63,8 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="card" style={{ padding: 40 }}>
-            <h3 style={{ marginBottom: 24 }}>Send us a message</h3>
+          <div className="card contact-form">
+            <h3>Send us a message</h3>
             {sent && (
               <p style={{ background: 'var(--gold-soft)', padding: '12px 16px', borderRadius: 10, marginBottom: 20 }}>
                 A Gmail window should have opened with your message ready to
@@ -76,7 +82,7 @@ export default function Contact() {
                   <input id="email" name="email" type="email" required />
                 </div>
               </div>
-              <div>
+              <div className="message-field">
                 <label htmlFor="message">Message</label>
                 <textarea id="message" name="message" rows="6" required />
               </div>

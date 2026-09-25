@@ -1,3 +1,5 @@
+import Icon from '../components/Icon.jsx'
+
 export default function VisitUs() {
   return (
     <>
@@ -60,7 +62,7 @@ export default function VisitUs() {
           </div>
           <div className="grid-3" style={{ marginTop: 48 }}>
             <div className="card">
-              <div className="card-icon">🍽️</div>
+              <div className="card-icon"><Icon name="dining" /></div>
               <h3>Dinner &amp; a Show</h3>
               <p>
                 Downtown Perry's restaurants are within walking distance of the
@@ -69,7 +71,7 @@ export default function VisitUs() {
               </p>
             </div>
             <div className="card">
-              <div className="card-icon">🛍️</div>
+              <div className="card-icon"><Icon name="bag" /></div>
               <h3>Shop Downtown</h3>
               <p>
                 Browse boutiques, antique shops, and local galleries along
@@ -78,7 +80,7 @@ export default function VisitUs() {
               </p>
             </div>
             <div className="card">
-              <div className="card-icon">🏨</div>
+              <div className="card-icon"><Icon name="lodging" /></div>
               <h3>Stay the Night</h3>
               <p>
                 Coming from out of town? Perry offers plenty of hotels and inns,
@@ -93,7 +95,7 @@ export default function VisitUs() {
       <section className="section">
         <div className="container grid-2">
           <div className="card">
-            <div className="card-icon">♿</div>
+            <div className="card-icon"><Icon name="accessible" /></div>
             <h3>Accessibility</h3>
             <p>
               Perry Players is committed to making theatre accessible to
@@ -104,7 +106,7 @@ export default function VisitUs() {
             </p>
           </div>
           <div className="card">
-            <div className="card-icon">🎟️</div>
+            <div className="card-icon"><Icon name="ticket" /></div>
             <h3>Seating</h3>
             <p>
               Our intimate theatre means there's not a bad seat in the house.

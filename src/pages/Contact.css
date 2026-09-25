@@ -1,0 +1,73 @@
+/* The message card stretches to the full height of the contact cards beside
+   it, with the message field absorbing the slack so nothing floats. */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "head head"
+    "info form";
+  column-gap: 32px;
+  row-gap: 28px;
+  align-items: stretch;
+}
+
+.contact-head {
+  grid-area: head;
+  text-align: center;
+}
+
+.contact-head .section-title {
+  color: var(--gold);
+}
+.contact-info { grid-area: info; }
+.contact-form { grid-area: form; }
+
+.contact-card + .contact-card {
+  margin-top: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.contact-form h3 {
+  margin-bottom: 24px;
+}
+
+.contact-form form {
+  flex: 1;
+  grid-template-rows: auto 1fr auto;
+}
+
+.contact-form .message-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .message-field textarea {
+  flex: 1;
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  justify-self: start;
+}
+
+@media (max-width: 760px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "info"
+      "form";
+    row-gap: 20px;
+  }
+
+  .contact-form {
+    padding: 32px 24px;
+  }
+}

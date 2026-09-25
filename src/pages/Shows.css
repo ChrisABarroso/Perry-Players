@@ -94,8 +94,8 @@
 }
 
 .season-teaser-curtain {
-  display: block;
-  font-size: 2.4rem;
+  display: inline-block;
+  color: var(--gold);
   margin-bottom: 18px;
 }
 

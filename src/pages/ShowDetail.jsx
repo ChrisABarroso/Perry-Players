@@ -1,9 +1,9 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { season, getShow } from '../season.js'
 import { emailLink } from '../email.js'
+import { TICKETS_URL } from '../tickets.js'
 import './ShowDetail.css'
-
-const TICKETS_URL = 'https://www.onthestage.tickets/show/perry-players-community-theatre/69841eaa04635e1054d365d0'
+import Icon from '../components/Icon.jsx'
 
 export default function ShowDetail() {
   const { slug } = useParams()
@@ -46,17 +46,17 @@ export default function ShowDetail() {
 
             <div className="show-dates-grid">
               <div className="show-date-card">
-                <span className="show-date-icon">🎤</span>
+                <span className="show-date-icon"><Icon name="microphone" size={24} /></span>
                 <strong>Auditions</strong>
                 <p>{show.auditions}</p>
               </div>
               <div className="show-date-card">
-                <span className="show-date-icon">🎟️</span>
+                <span className="show-date-icon"><Icon name="ticket" size={24} /></span>
                 <strong>Tickets On Sale</strong>
                 <p>{show.ticketsOnSale}</p>
               </div>
               <div className="show-date-card is-featured">
-                <span className="show-date-icon">🎭</span>
+                <span className="show-date-icon"><Icon name="mask" size={24} /></span>
                 <strong>Performances</strong>
                 <p>{show.performances}</p>
               </div>
