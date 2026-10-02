@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { season, getShow } from '../season.js'
+import { getShow } from '../season.js'
 import { emailLink } from '../email.js'
 import { TICKETS_URL } from '../tickets.js'
 import './ShowDetail.css'
@@ -11,15 +11,12 @@ export default function ShowDetail() {
 
   if (!show) return <Navigate to="/shows" replace />
 
-  const prev = season[show.number - 2]
-  const next = season[show.number]
-
   return (
     <>
       <section className="page-hero">
         <div className="container">
           <span className="badge">
-            {show.kids ? "Children's Show" : 'MainStage'} · Show {show.number} of {season.length}
+            {show.nowShowing ? 'Now Showing' : show.kids ? "Children's Show" : 'MainStage'}
           </span>
           <h1>{show.title}</h1>
           <p>{show.tagline}</p>
@@ -45,15 +42,23 @@ export default function ShowDetail() {
             <p className="show-detail-synopsis">{show.synopsis}</p>
 
             <div className="show-dates-grid">
-              <div className="show-date-card">
-                <span className="show-date-icon"><Icon name="microphone" size={24} /></span>
-                <strong>Auditions</strong>
-                <p>{show.auditions}</p>
-              </div>
+              {show.auditions && (
+                <div className="show-date-card">
+                  <span className="show-date-icon"><Icon name="microphone" size={24} /></span>
+                  <strong>Auditions</strong>
+                  <p>{show.auditions}</p>
+                </div>
+              )}
               <div className="show-date-card">
                 <span className="show-date-icon"><Icon name="ticket" size={24} /></span>
-                <strong>Tickets On Sale</strong>
-                <p>{show.ticketsOnSale}</p>
+                <strong>Tickets</strong>
+                <p>
+                  {show.nowShowing
+                    ? 'On sale now'
+                    : show.ticketsOnSale
+                      ? `On sale ${show.ticketsOnSale}`
+                      : 'Coming soon'}
+                </p>
               </div>
               <div className="show-date-card is-featured">
                 <span className="show-date-icon"><Icon name="mask" size={24} /></span>
@@ -71,44 +76,31 @@ export default function ShowDetail() {
                 Buy Tickets
               </a>
               {/* Season pass button goes here once season passes go on sale. */}
-              <a
-                className="btn btn-outline"
-                href={emailLink(`Audition Info — ${show.title}`)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ask About Auditions
-              </a>
+              {show.auditions && (
+                <a
+                  className="btn btn-outline"
+                  href={emailLink(`Audition Info — ${show.title}`)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ask About Auditions
+                </a>
+              )}
             </div>
-            <p className="show-detail-note">
-              Tickets go on sale {show.ticketsOnSale}. Auditions are open to
-              everyone — no experience required.
-            </p>
+            {show.auditions && (
+              <p className="show-detail-note">
+                Auditions are open to everyone — no experience required.
+              </p>
+            )}
           </div>
         </div>
       </section>
 
       <section className="section section-soft show-detail-nav-section">
-        <div className="container show-detail-nav">
-          {prev ? (
-            <Link to={`/shows/${prev.slug}`} className="show-nav-link">
-              <small>← Previous Show</small>
-              <span>{prev.title}</span>
-            </Link>
-          ) : (
-            <span />
-          )}
+        <div className="container center">
           <Link to="/shows" className="btn btn-outline">
-            Full Season
+            All Shows
           </Link>
-          {next ? (
-            <Link to={`/shows/${next.slug}`} className="show-nav-link is-next">
-              <small>Next Show →</small>
-              <span>{next.title}</span>
-            </Link>
-          ) : (
-            <span />
-          )}
         </div>
       </section>
     </>

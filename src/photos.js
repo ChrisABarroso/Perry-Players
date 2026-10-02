@@ -41,16 +41,11 @@ export const mainstagePhotos = Object.entries(mainstageGlob).map(([path, src]) =
   alt: `Scene from ${showTitle(path)} at Perry Players`,
 }))
 
-// The season lineup, in performance order. Each entry finds its poster in
-// the Season Posters folder by filename; shows without a poster yet get a
-// styled placeholder until the file is added.
+// Announced upcoming shows, in performance order. Each entry finds its
+// poster in the Season Posters folder by filename; a show without a poster
+// yet gets a styled placeholder until the file is added.
 const seasonOrder = [
-  { title: 'Finding Nemo', match: /nemo/i, kids: true },
-  { title: 'Into the Woods', match: /into the woods/i },
-  { title: 'The Sound of Music', match: /sound of music/i },
-  { title: 'Little Women', match: /little women/i },
-  { title: 'Ragtime', match: /ragtime/i },
-  { title: 'Sister Act', match: /sister act/i },
+  { title: 'She Loves Me', match: /she loves me/i },
 ]
 
 export const seasonShows = seasonOrder.map((show) => {

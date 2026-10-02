@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom'
 import PhotoGrid from '../components/PhotoGrid.jsx'
-import { mainstagePhotos, showPosterPortrait } from '../photos.js'
+import { mainstagePhotos } from '../photos.js'
 import { TICKETS_URL } from '../tickets.js'
+import { shows } from '../season.js'
 import './Shows.css'
-import Icon from '../components/Icon.jsx'
 
 export default function Shows() {
+  const upNext = shows.findIndex((show) => !show.nowShowing)
+
   return (
     <>
       <section className="page-hero">
@@ -18,54 +21,50 @@ export default function Shows() {
         </div>
       </section>
 
-      {/* Current show */}
-      <section className="section">
-        <div className="container">
-          <div className="show-feature">
-            <div className="show-feature-art">
-              <img src={showPosterPortrait} alt="Into the Woods poster" />
-            </div>
-            <div className="show-feature-body">
-              <span className="badge">Now Showing</span>
-              <h2>Into the Woods</h2>
-              <p className="show-dates">October 16 – 25, 2026</p>
-              <p>
-                Stephen Sondheim and James Lapine's masterpiece weaves together
-                the fairy tales you grew up with — Cinderella, Jack and the
-                Beanstalk, Little Red Riding Hood, Rapunzel — around a baker and
-                his wife who long for a child. To lift a witch's curse, they
-                venture into the woods, where every wish comes true… and every
-                wish has a price. Witty, haunting, and gorgeous, it's one of the
-                greatest musicals ever written.
-              </p>
-              <ul className="show-meta">
-                <li><strong>Thu, Fri &amp; Sat</strong> 7:30 PM</li>
-                <li><strong>Sun</strong> 2:30 PM</li>
-                <li><strong>Where</strong> 909 Main Street, Perry</li>
-              </ul>
-              <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
-                Buy Tickets
-              </a>
+      {/* Current and announced upcoming shows */}
+      {shows.map((show, i) => (
+        <section className={`section ${i % 2 ? 'section-soft' : ''}`} key={show.slug}>
+          <div className="container">
+            <div className="show-feature">
+              <div className="show-feature-art">
+                <img src={show.src} alt={`${show.title} poster`} />
+              </div>
+              <div className="show-feature-body">
+                <span className="badge">
+                  {show.nowShowing ? 'Now Showing' : i === upNext ? 'Up Next' : 'Coming Soon'}
+                </span>
+                <h2>{show.title}</h2>
+                <p className="show-dates">{show.performances}</p>
+                <p>{show.synopsis}</p>
+                <ul className="show-meta">
+                  {show.nowShowing ? (
+                    <>
+                      <li><strong>Thu, Fri &amp; Sat</strong> 7:30 PM</li>
+                      <li><strong>Sun</strong> 2:30 PM</li>
+                    </>
+                  ) : (
+                    show.auditions && <li><strong>Auditions</strong> {show.auditions}</li>
+                  )}
+                  <li><strong>Where</strong> 909 Main Street, Perry</li>
+                </ul>
+                <div className="show-feature-actions">
+                  {show.nowShowing && (
+                    <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
+                      Buy Tickets
+                    </a>
+                  )}
+                  <Link
+                    className={`btn ${show.nowShowing ? 'btn-outline' : 'btn-primary'}`}
+                    to={`/shows/${show.slug}`}
+                  >
+                    Show Details
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Season announcement teaser */}
-      <section className="section section-soft">
-        <div className="container center">
-          <div className="season-teaser">
-            <span className="season-teaser-curtain"><Icon name="mask" size={40} /></span>
-            <span className="eyebrow">Coming Soon</span>
-            <h2 className="section-title">Our next season will be announced soon</h2>
-            <p className="section-lead">
-              We're putting the finishing touches on our upcoming lineup, and
-              we can't wait to share it. Follow us on Facebook and Instagram or
-              check back here to be the first to know.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* Past productions */}
       <section className="section">

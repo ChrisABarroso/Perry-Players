@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import logo from '../Photos/PP_logo_light.png'
 import { TICKETS_URL } from '../tickets.js'
+import { shows } from '../season.js'
 import './Navbar.css'
 
-// The Shows tab gets a per-show dropdown again once a season is announced —
-// set `dropdown: true` on it and restore the season menu in the nav below.
+// The Shows tab opens a dropdown with a link to each show's page.
 const links = [
   { to: '/', label: 'Home' },
-  { to: '/shows', label: 'Shows' },
+  { to: '/shows', label: 'Shows', dropdown: true },
   { to: '/visit', label: 'Visit Us' },
   { to: '/about', label: 'About' },
   { to: '/support', label: 'Support Us' },
@@ -31,16 +31,43 @@ export default function Navbar() {
         </Link>
 
         <nav className={`nav-links ${open ? 'is-open' : ''}`}>
-          {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              onClick={() => setOpen(false)}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-            >
-              {l.label}
-            </NavLink>
-          ))}
+          {links.map((l) =>
+            l.dropdown ? (
+              <div className="nav-drop" key={l.to}>
+                <NavLink
+                  to={l.to}
+                  end
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  {l.label} <span className="nav-drop-caret">▾</span>
+                </NavLink>
+                <div className="nav-drop-menu">
+                  {shows.map((show) => (
+                    <NavLink
+                      key={show.slug}
+                      to={`/shows/${show.slug}`}
+                      onClick={() => setOpen(false)}
+                      className={({ isActive }) => (isActive ? 'active' : '')}
+                    >
+                      {show.title}
+                      {show.nowShowing && <small> · Now Showing</small>}
+                      {show.kids && <small> · Children's</small>}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
+                {l.label}
+              </NavLink>
+            ),
+          )}
           <a
             className="btn btn-primary nav-cta"
             href={TICKETS_URL}
