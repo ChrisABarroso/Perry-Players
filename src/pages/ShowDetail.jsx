@@ -47,6 +47,7 @@ export default function ShowDetail() {
                   <span className="show-date-icon"><Icon name="microphone" size={24} /></span>
                   <strong>Auditions</strong>
                   <p>{show.auditions}</p>
+                  {show.auditionTimes && <small>{show.auditionTimes}</small>}
                 </div>
               )}
               <div className="show-date-card">

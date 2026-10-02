@@ -96,6 +96,13 @@
   font-size: 0.98rem;
 }
 
+.show-date-card small {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
 .show-detail-times {
   color: var(--ink-soft);
   margin-bottom: 28px;

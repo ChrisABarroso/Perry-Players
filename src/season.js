@@ -26,6 +26,7 @@ const details = {
     synopsis:
       "In 1934 Budapest, co-workers Georg and Amalia seemingly despise one another at Maraczek's Parfumerie. After both respond to a \"lonely hearts ad\" in the newspaper, they now live for the letters that they exchange, not knowing that the stranger they're falling in love with is their own worst enemy. Based on the play Parfumerie, on which the movies You've Got Mail, The Shop Around The Corner, and In The Good Old Summertime are also based, the plot may seem pleasantly familiar. She Loves Me is a charming comedy with an endearing innocence and a touch of old world elegance with a grand Christmas time finale.",
     auditions: 'October 10 – 11, 2026',
+    auditionTimes: 'Doors open 6:30 PM · Auditions start 7:00 PM',
     performances: 'December 11 – 20, 2026',
   },
 }

@@ -43,7 +43,12 @@ export default function Shows() {
                       <li><strong>Sun</strong> 2:30 PM</li>
                     </>
                   ) : (
-                    show.auditions && <li><strong>Auditions</strong> {show.auditions}</li>
+                    show.auditions && (
+                      <li>
+                        <strong>Auditions</strong> {show.auditions}
+                        {show.auditionTimes && ` · ${show.auditionTimes}`}
+                      </li>
+                    )
                   )}
                   <li><strong>Where</strong> 909 Main Street, Perry</li>
                 </ul>
