@@ -1,4 +1,4 @@
-export const BOX_OFFICE_EMAIL = 'perryplayersboxoffice@gmail.com'
+export const BOX_OFFICE_EMAIL = 'perryplayerstheatreboxoffice@gmail.com'
 
 // Opens Gmail's compose window in a new tab, pre-addressed to the box office.
 // Unlike mailto: links, this works for visitors who use Gmail in the browser
