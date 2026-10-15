@@ -1,5 +1,6 @@
 import { seasonShows, showPosterPortrait } from './photos.js'
 import strandburgLogo from './Sponsorship/Into The Woods/Mark Strandburg.jpg'
+import stanfordLogo from './Sponsorship/Into The Woods/Stanford Studios.png'
 
 // Paste the season pass purchase link here when it's ready.
 export const SEASON_PASS_URL = ''
@@ -15,10 +16,17 @@ const nowShowing = {
   synopsis:
     "Stephen Sondheim and James Lapine's masterpiece weaves together the fairy tales you grew up with — Cinderella, Jack and the Beanstalk, Little Red Riding Hood, Rapunzel — around a baker and his wife who long for a child. To lift a witch's curse, they venture into the woods, where every wish comes true… and every wish has a price. Witty, haunting, and gorgeous, it's one of the greatest musicals ever written.",
   performances: 'October 16 – 25, 2026',
+  advisories: [
+    'Rated PG-13: contains mild adult content and situations',
+    'Fog is used in this production',
+  ],
   // Show-level sponsors get their logo on the show page; Spotlight and
   // Supporting sponsors are listed by name.
   sponsors: {
-    show: [{ name: 'Mark Strandburg, DMD, LLC', logo: strandburgLogo }],
+    show: [
+      { name: 'Mark Strandburg, DMD, LLC', logo: strandburgLogo },
+      { name: 'Stanford Studio', logo: stanfordLogo },
+    ],
     spotlight: ['Economy Tire Sales', 'Griffin Lumber'],
     supporting: ['Jim and Sue Lay', 'Burn Bootcamp'],
   },

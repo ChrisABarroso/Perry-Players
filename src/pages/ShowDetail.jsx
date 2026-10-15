@@ -72,6 +72,17 @@ export default function ShowDetail() {
               <strong>Showtimes:</strong> Thu, Fri &amp; Sat 7:30 PM · Sun 2:30 PM
             </p>
 
+            {show.advisories && (
+              <div className="show-advisory">
+                <strong>Audience Advisory</strong>
+                <ul>
+                  {show.advisories.map((advisory) => (
+                    <li key={advisory}>{advisory}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <div className="show-detail-actions">
               <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
                 Buy Tickets

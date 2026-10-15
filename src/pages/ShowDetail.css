@@ -112,6 +112,30 @@
   color: var(--ink);
 }
 
+.show-advisory {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+}
+
+.show-advisory strong {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.show-advisory ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+}
+
 .show-detail-actions {
   display: flex;
   gap: 30px;
