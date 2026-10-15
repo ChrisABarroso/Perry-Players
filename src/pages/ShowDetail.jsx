@@ -97,6 +97,41 @@ export default function ShowDetail() {
         </div>
       </section>
 
+      {show.sponsors && (
+        <section className="section section-soft show-sponsors">
+          <div className="container center">
+            <span className="eyebrow">Thank You</span>
+            <h2 className="section-title">Our {show.title} Sponsors</h2>
+
+            {show.sponsors.show?.length > 0 && (
+              <div className="show-sponsor-logos">
+                {show.sponsors.show.map((sponsor) => (
+                  <div className="show-sponsor-logo" key={sponsor.name}>
+                    <img src={sponsor.logo} alt={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {[
+              ['Spotlight Sponsors', show.sponsors.spotlight],
+              ['Supporting Sponsors', show.sponsors.supporting],
+            ].map(([label, names]) =>
+              names?.length > 0 && (
+                <div className="show-sponsor-tier" key={label}>
+                  <strong>{label}</strong>
+                  <ul>
+                    {names.map((name) => (
+                      <li key={name}>{name}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            )}
+          </div>
+        </section>
+      )}
+
       <section className="section section-soft show-detail-nav-section">
         <div className="container center">
           <Link to="/shows" className="btn btn-outline">
