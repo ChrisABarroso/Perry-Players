@@ -27,7 +27,7 @@ const nowShowing = {
       { name: 'Mark Strandburg, DMD, LLC', logo: strandburgLogo },
       { name: 'Stanford Studio', logo: stanfordLogo },
     ],
-    spotlight: ['Economy Tire Sales', 'Griffin Lumber'],
+    spotlight: ['Economy Tire Sales', 'Griffin Lumber', 'AWT Home', 'Cruise Planners',],
     supporting: ['Jim and Sue Lay', 'Burn Bootcamp'],
   },
 }
