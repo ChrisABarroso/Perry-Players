@@ -1,44 +1,22 @@
-import { seasonShows, showPosterPortrait } from './photos.js'
-import strandburgLogo from './Sponsorship/Into The Woods/Mark Strandburg.jpg'
-import stanfordLogo from './Sponsorship/Into The Woods/Stanford Studios.png'
+import { seasonShows } from './photos.js'
 
 // Paste the season pass purchase link here when it's ready.
 export const SEASON_PASS_URL = ''
 
-// The show currently on stage. Its poster comes from the Current Show
-// Poster folder.
-const nowShowing = {
-  title: 'Into the Woods',
-  slug: 'into-the-woods',
-  src: showPosterPortrait,
-  nowShowing: true,
-  tagline: 'Be careful what you wish for',
-  synopsis:
-    "Stephen Sondheim and James Lapine's masterpiece weaves together the fairy tales you grew up with — Cinderella, Jack and the Beanstalk, Little Red Riding Hood, Rapunzel — around a baker and his wife who long for a child. To lift a witch's curse, they venture into the woods, where every wish comes true… and every wish has a price. Witty, haunting, and gorgeous, it's one of the greatest musicals ever written.",
-  performances: 'October 16 – 25, 2026',
-  advisories: [
-    'Rated PG-13: contains mild adult content and situations',
-    'Fog is used in this production',
-  ],
-  // Show-level sponsors get their logo on the show page; Spotlight and
-  // Supporting sponsors are listed by name.
-  sponsors: {
-    show: [
-      { name: 'Mark Strandburg, DMD, LLC', logo: strandburgLogo },
-      { name: 'Stanford Studio', logo: stanfordLogo },
-    ],
-    spotlight: ['Economy Tire Sales', 'Griffin Lumber', 'AWT Home', 'Cruise Planners',],
-    supporting: ['Jim and Sue Lay', 'Burn Bootcamp'],
-  },
-}
-
-// Details for each announced upcoming show. Performances run Thu, Fri & Sat
-// 7:30 PM and Sun 2:30 PM. Add `ticketsOnSale` once the date is set; until
-// then the show page says "Coming soon".
+// Details for each announced show. Performances run Thu, Fri & Sat 7:30 PM
+// and Sun 2:30 PM.
+//
+// WHEN TICKETS GO ON SALE: add `ticketsAvailable: true` to that show and the
+// Buy Tickets buttons reappear across the site. Until then every page says
+// tickets are on sale soon.
+// WHEN A SHOW OPENS: add `nowShowing: true` so it is labelled Now Showing.
 const details = {
   'She Loves Me': {
     slug: 'she-loves-me',
     tagline: 'A charming romantic comedy with a Christmastime finale',
+    // Short version used on the home page hero card.
+    blurb:
+      "Two feuding co-workers at a 1930s Budapest parfumerie are secretly falling in love by letter — never guessing the stranger they adore is the person they can't stand.",
     synopsis:
       "In 1934 Budapest, co-workers Georg and Amalia seemingly despise one another at Maraczek's Parfumerie. After both respond to a \"lonely hearts ad\" in the newspaper, they now live for the letters that they exchange, not knowing that the stranger they're falling in love with is their own worst enemy. Based on the play Parfumerie, on which the movies You've Got Mail, The Shop Around The Corner, and In The Good Old Summertime are also based, the plot may seem pleasantly familiar. She Loves Me is a charming comedy with an endearing innocence and a touch of old world elegance with a grand Christmas time finale.",
     performances: 'December 11 – 20, 2026',
@@ -47,10 +25,15 @@ const details = {
 
 // Every show with its own page, in performance order. This list drives the
 // Shows page, the Shows dropdown in the nav, and /shows/:slug.
-export const shows = [
-  nowShowing,
-  ...seasonShows.map((show) => ({ ...show, ...details[show.title] })),
-]
+export const shows = seasonShows.map((show) => ({ ...show, ...details[show.title] }))
+
+// The show featured on the home page: whatever is on stage now, or the next
+// one announced.
+export const featuredShow = shows.find((show) => show.nowShowing) || shows[0]
+
+// True once any show has tickets for sale. Gates the Buy Tickets button in
+// the nav so it never points at an empty box office.
+export const ticketsOnSale = shows.some((show) => show.ticketsAvailable)
 
 export function getShow(slug) {
   return shows.find((show) => show.slug === slug)

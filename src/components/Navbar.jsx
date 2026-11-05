@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import logo from '../Photos/PP_logo_light.png'
 import { TICKETS_URL } from '../tickets.js'
-import { shows } from '../season.js'
+import { shows, ticketsOnSale } from '../season.js'
 import './Navbar.css'
 
 // The Shows tab opens a dropdown with a link to each show's page.
@@ -68,14 +68,17 @@ export default function Navbar() {
               </NavLink>
             ),
           )}
-          <a
-            className="btn btn-primary nav-cta"
-            href={TICKETS_URL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Buy Tickets
-          </a>
+          {/* Reappears automatically once a show has ticketsAvailable set. */}
+          {ticketsOnSale && (
+            <a
+              className="btn btn-primary nav-cta"
+              href={TICKETS_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy Tickets
+            </a>
+          )}
         </nav>
 
         <button

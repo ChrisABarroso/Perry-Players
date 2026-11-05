@@ -52,7 +52,16 @@
   margin: -41px -41px 26px;
   max-width: none;
   height: auto;
+  max-height: 340px;
+  object-fit: contain;
+  background: #14101d;
   border-bottom: 3px solid var(--gold);
+}
+
+.hero-card > p.hero-card-note {
+  margin: 16px 0 0;
+  font-size: 0.92rem;
+  color: var(--gold-bright);
 }
 
 .hero-card-label {

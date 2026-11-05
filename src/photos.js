@@ -9,10 +9,6 @@ const mainstageGlob = import.meta.glob('./Photos/MainStage/*', {
   eager: true,
   import: 'default',
 })
-const posterGlob = import.meta.glob('./Photos/Current Show Poster/*', {
-  eager: true,
-  import: 'default',
-})
 const seasonGlob = import.meta.glob('./Photos/Season Posters/*', {
   eager: true,
   import: 'default',
@@ -41,9 +37,9 @@ export const mainstagePhotos = Object.entries(mainstageGlob).map(([path, src]) =
   alt: `Scene from ${showTitle(path)} at Perry Players`,
 }))
 
-// Announced upcoming shows, in performance order. Each entry finds its
-// poster in the Season Posters folder by filename; a show without a poster
-// yet gets a styled placeholder until the file is added.
+// Announced shows, in performance order. Each entry finds its poster in the
+// Season Posters folder by filename; a show without a poster yet gets a
+// styled placeholder until the file is added.
 const seasonOrder = [
   { title: 'She Loves Me', match: /she loves me/i },
 ]
@@ -52,13 +48,3 @@ export const seasonShows = seasonOrder.map((show) => {
   const entry = Object.entries(seasonGlob).find(([path]) => show.match.test(path))
   return { title: show.title, kids: show.kids, src: entry ? entry[1] : null }
 })
-
-// Current show art. Name the wide/banner file with "landscape", "wide", or
-// "banner" in it; whatever else is in the folder is treated as the portrait
-// poster. Falls back to the same image for both if only one file exists.
-const posterEntries = Object.entries(posterGlob)
-const wideEntry = posterEntries.find(([path]) => /landscape|wide|banner/i.test(path))
-const portraitEntry = posterEntries.find((entry) => entry !== wideEntry)
-
-export const showPosterPortrait = (portraitEntry || wideEntry)?.[1]
-export const showPosterWide = (wideEntry || portraitEntry)?.[1]

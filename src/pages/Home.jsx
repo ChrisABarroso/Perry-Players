@@ -1,20 +1,22 @@
 import { Link } from 'react-router-dom'
 import Slideshow from '../components/Slideshow.jsx'
 import ReviewSlideshow from '../components/ReviewSlideshow.jsx'
-import { mainstagePhotos, showPosterWide } from '../photos.js'
+import { mainstagePhotos } from '../photos.js'
 import { reviews } from '../reviews.js'
-import { TICKETS_URL } from '../tickets.js'
+import { featuredShow } from '../season.js'
 import './Home.css'
 import Icon from '../components/Icon.jsx'
 
 export default function Home() {
+  const show = featuredShow
+
   return (
     <>
       {/* Hero */}
       <section className="hero">
         <div className="container hero-inner">
           <div className="hero-copy">
-            <span className="badge">Now on stage in Downtown Perry</span>
+            <span className="badge">Coming soon to Downtown Perry</span>
             <h1>
               Middle Georgia's Premier
               <span className="hero-highlight"> Community Theatre</span>
@@ -25,34 +27,36 @@ export default function Home() {
               community together.
             </p>
             <div className="hero-actions">
-              {/* Season pass button goes here once season passes go on sale. */}
-              <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
-                Get Tickets
-              </a>
-              <Link className="btn btn-outline" to="/shows">
+              {/* Get Tickets button goes here once tickets go on sale. */}
+              <Link className="btn btn-primary" to="/shows">
                 See What's On
+              </Link>
+              <Link className="btn btn-outline" to="/visit">
+                Plan Your Visit
               </Link>
             </div>
           </div>
 
           <div className="hero-card">
-            <img
-              className="hero-card-poster"
-              src={showPosterWide}
-              alt="Into the Woods at Perry Players"
-            />
-            <span className="hero-card-label">Now Showing</span>
-            <h2>Into the Woods</h2>
-            <p className="hero-card-dates">October 16 – 25, 2026</p>
-            <p>
-              Stephen Sondheim's beloved musical weaves Cinderella, Jack and the
-              Beanstalk, Little Red Riding Hood, and Rapunzel into one
-              enchanting story — where every wish comes true, and every wish
-              has a price.
-            </p>
-            <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
-              Buy Tickets
-            </a>
+            {show.src && (
+              <img
+                className="hero-card-poster"
+                src={show.src}
+                alt={`${show.title} at Perry Players`}
+              />
+            )}
+            <span className="hero-card-label">
+              {show.nowShowing ? 'Now Showing' : 'Coming Soon'}
+            </span>
+            <h2>{show.title}</h2>
+            <p className="hero-card-dates">{show.performances}</p>
+            <p>{show.blurb || show.tagline}</p>
+            <Link className="btn btn-primary" to={`/shows/${show.slug}`}>
+              Show Details
+            </Link>
+            {!show.ticketsAvailable && (
+              <p className="hero-card-note">Tickets on sale soon</p>
+            )}
           </div>
         </div>
       </section>
@@ -163,10 +167,13 @@ export default function Home() {
       <section className="cta-banner">
         <div className="container center">
           <h2>Ready for your night at the theatre?</h2>
-          <p>Grab your seats for Into the Woods before they're gone.</p>
-          <a className="btn btn-light" href={TICKETS_URL} target="_blank" rel="noreferrer">
-            Get Tickets Now
-          </a>
+          <p>
+            {show.title} opens {show.performances.split('–')[0].trim()} —
+            tickets on sale soon.
+          </p>
+          <Link className="btn btn-light" to={`/shows/${show.slug}`}>
+            See the Show
+          </Link>
         </div>
       </section>
     </>

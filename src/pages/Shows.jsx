@@ -6,8 +6,6 @@ import { shows } from '../season.js'
 import './Shows.css'
 
 export default function Shows() {
-  const upNext = shows.findIndex((show) => !show.nowShowing)
-
   return (
     <>
       <section className="page-hero">
@@ -31,35 +29,33 @@ export default function Shows() {
               </div>
               <div className="show-feature-body">
                 <span className="badge">
-                  {show.nowShowing ? 'Now Showing' : i === upNext ? 'Up Next' : 'Coming Soon'}
+                  {show.nowShowing ? 'Now Showing' : 'Coming Soon'}
                 </span>
                 <h2>{show.title}</h2>
                 <p className="show-dates">{show.performances}</p>
                 <p>{show.synopsis}</p>
                 <ul className="show-meta">
-                  {show.nowShowing ? (
-                    <>
-                      <li><strong>Thu, Fri &amp; Sat</strong> 7:30 PM</li>
-                      <li><strong>Sun</strong> 2:30 PM</li>
-                    </>
-                  ) : (
-                    show.auditions && (
-                      <li>
-                        <strong>Auditions</strong> {show.auditions}
-                        {show.auditionTimes && ` · ${show.auditionTimes}`}
-                      </li>
-                    )
-                  )}
+                  <li><strong>Thu, Fri &amp; Sat</strong> 7:30 PM</li>
+                  <li><strong>Sun</strong> 2:30 PM</li>
                   <li><strong>Where</strong> 909 Main Street, Perry</li>
+                  {show.auditions && (
+                    <li>
+                      <strong>Auditions</strong> {show.auditions}
+                      {show.auditionTimes && ` · ${show.auditionTimes}`}
+                    </li>
+                  )}
+                  {!show.ticketsAvailable && (
+                    <li><strong>Tickets</strong> On sale soon</li>
+                  )}
                 </ul>
                 <div className="show-feature-actions">
-                  {show.nowShowing && (
+                  {show.ticketsAvailable && (
                     <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
                       Buy Tickets
                     </a>
                   )}
                   <Link
-                    className={`btn ${show.nowShowing ? 'btn-outline' : 'btn-primary'}`}
+                    className={`btn ${show.ticketsAvailable ? 'btn-outline' : 'btn-primary'}`}
                     to={`/shows/${show.slug}`}
                   >
                     Show Details

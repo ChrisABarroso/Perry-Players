@@ -54,11 +54,11 @@ export default function ShowDetail() {
                 <span className="show-date-icon"><Icon name="ticket" size={24} /></span>
                 <strong>Tickets</strong>
                 <p>
-                  {show.nowShowing
+                  {show.ticketsAvailable
                     ? 'On sale now'
                     : show.ticketsOnSale
                       ? `On sale ${show.ticketsOnSale}`
-                      : 'Coming soon'}
+                      : 'On sale soon'}
                 </p>
               </div>
               <div className="show-date-card is-featured">
@@ -84,10 +84,12 @@ export default function ShowDetail() {
             )}
 
             <div className="show-detail-actions">
-              <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
-                Buy Tickets
-              </a>
               {/* Season pass button goes here once season passes go on sale. */}
+              {show.ticketsAvailable && (
+                <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
+                  Buy Tickets
+                </a>
+              )}
               {show.auditions && (
                 <a
                   className="btn btn-outline"
