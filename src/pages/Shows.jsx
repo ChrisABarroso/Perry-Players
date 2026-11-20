@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import PhotoGrid from '../components/PhotoGrid.jsx'
 import { mainstagePhotos } from '../photos.js'
-import { TICKETS_URL } from '../tickets.js'
 import { shows } from '../season.js'
 import './Shows.css'
 
@@ -50,7 +49,7 @@ export default function Shows() {
                 </ul>
                 <div className="show-feature-actions">
                   {show.ticketsAvailable && (
-                    <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
+                    <a className="btn btn-primary" href={show.ticketsUrl} target="_blank" rel="noreferrer">
                       Buy Tickets
                     </a>
                   )}

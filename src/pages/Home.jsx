@@ -27,8 +27,12 @@ export default function Home() {
               community together.
             </p>
             <div className="hero-actions">
-              {/* Get Tickets button goes here once tickets go on sale. */}
-              <Link className="btn btn-primary" to="/shows">
+              {show.ticketsAvailable && (
+                <a className="btn btn-primary" href={show.ticketsUrl} target="_blank" rel="noreferrer">
+                  Get Tickets
+                </a>
+              )}
+              <Link className={`btn ${show.ticketsAvailable ? 'btn-outline' : 'btn-primary'}`} to="/shows">
                 See What's On
               </Link>
               <Link className="btn btn-outline" to="/visit">
@@ -169,7 +173,7 @@ export default function Home() {
           <h2>Ready for your night at the theatre?</h2>
           <p>
             {show.title} opens {show.performances.split('–')[0].trim()} —
-            tickets on sale soon.
+            {show.ticketsAvailable ? ' tickets on sale now.' : ' tickets on sale soon.'}
           </p>
           <Link className="btn btn-light" to={`/shows/${show.slug}`}>
             See the Show

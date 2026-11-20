@@ -1,7 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { getShow } from '../season.js'
 import { emailLink } from '../email.js'
-import { TICKETS_URL } from '../tickets.js'
 import './ShowDetail.css'
 import Icon from '../components/Icon.jsx'
 
@@ -86,7 +85,7 @@ export default function ShowDetail() {
             <div className="show-detail-actions">
               {/* Season pass button goes here once season passes go on sale. */}
               {show.ticketsAvailable && (
-                <a className="btn btn-primary" href={TICKETS_URL} target="_blank" rel="noreferrer">
+                <a className="btn btn-primary" href={show.ticketsUrl} target="_blank" rel="noreferrer">
                   Buy Tickets
                 </a>
               )}

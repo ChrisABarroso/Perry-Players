@@ -42,6 +42,7 @@ export const mainstagePhotos = Object.entries(mainstageGlob).map(([path, src]) =
 // styled placeholder until the file is added.
 const seasonOrder = [
   { title: 'She Loves Me', match: /she loves me/i },
+  { title: 'The Little Mermaid', match: /little mermaid/i },
 ]
 
 export const seasonShows = seasonOrder.map((show) => {
